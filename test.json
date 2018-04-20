@@ -6,7 +6,22 @@
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-white/",
          "title": "Limited - White",
-         "parser": "channelfireball"
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-blue/",
+         "title": "Limited - Blue",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-black/",
+         "title": "Limited - Black",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-red/",
+         "title": "Limited - Red",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\DominariaSetReview\\"

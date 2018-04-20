@@ -37,7 +37,6 @@ namespace EpubCreator
 
         #region Setup
 
-        WebReader wr = new WebReader();
         Epub epub = new Epub();
 
 
@@ -57,11 +56,6 @@ namespace EpubCreator
                 Logger.LogInfo("args[" + i + "]: " + args[i]);
                 switch (args[i])
                 {
-                    case "--url":
-                    case "-u":
-                        i++;
-                        wr.ReadWebPage(args[i]);
-                        break;
                     case "--file": 
                     case "-f":
                         i++;
@@ -102,6 +96,20 @@ namespace EpubCreator
             //will want to wait to generate package.opf till we have all the files and everything we need
             writer = new StreamWriter(File.Create(epub.location + EpubStructure.PACKAGELOCATION));
             writer.Close();
+            foreach(Page page in epub.pages)
+            {
+                EpubParser parser = (EpubParser)Activator.CreateInstance(Type.GetType("EpubCreator." + page.parser + "Parser"));
+                string bodyText = parser.Parse(page.url);
+                string pageTitleNoSpaces = page.title.Replace(" ", "");
+                writer = new StreamWriter(File.Create(epub.location + EpubStructure.OEBPSLOCATION + "\\" + pageTitleNoSpaces + ".xhtml"));
+                writer.WriteLine(
+                string.Format(EpubStructure.COMMONPAGE,
+                    string.Format(EpubStructure.COMMONHEADER, epub.title),
+                    string.Format(EpubStructure.COMMONBODY, pageTitleNoSpaces, page.title, bodyText)
+                ));
+                writer.Close();
+            }
+
         }
     }
 }

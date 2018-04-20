@@ -11,13 +11,13 @@ namespace EpubCreator
     {
         public static string MIMETYPE = "application/epub+zip";
         public static string MIMETYPELOCATION = "mimetype";
-        public static string CONTAINER = "<? xml version =\"1.0\"?>\n<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">\n\t<rootfiles>\n\t\t<rootfile full-path=\"OEBPS /package.opf\"\n\t\t\tmedia-type=\"application /oebps-package+xml\" />\n\t</rootfiles>\n</container>";
+        public static string CONTAINER = "<? xml version =\"1.0\"?>\n<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">\n\t<rootfiles>\n\t\t<rootfile full-path=\"CONTENT/package.opf\"\n\t\t\tmedia-type=\"application /oebps-package+xml\" />\n\t</rootfiles>\n</container>";
         public static string METAINFLOCATION = "META-INF";
         public static string CONTAINERLOCATION = METAINFLOCATION + "\\container.xml";
-        public static string OEBPSLOCATION = "OEBPS";
-        public static string IMAGELOCATION = OEBPSLOCATION + "\\images";
-        public static string CSSLOCATION = OEBPSLOCATION + "\\css";
-        public static string PACKAGELOCATION = OEBPSLOCATION + "\\package.opf";
+        public static string CONTENTLOCATION = "CONTENT";
+        public static string IMAGELOCATION = CONTENTLOCATION + "\\images";
+        public static string CSSLOCATION = CONTENTLOCATION + "\\css";
+        public static string PACKAGELOCATION = CONTENTLOCATION + "\\package.opf";
         public static string COMMONPAGE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                                             + "\n<html xmlns = \"http://www.w3.org/1999/xhtml\" xmlns:epub=\"http://www.idpf.org/2007/ops\">"
                                             + "\n<head>"

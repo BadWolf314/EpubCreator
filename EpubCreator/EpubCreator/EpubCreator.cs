@@ -87,7 +87,7 @@ namespace EpubCreator
             StreamWriter writer = new StreamWriter(File.Create(epub.location + EpubStructure.CONTAINERLOCATION));
             writer.WriteLine(EpubStructure.CONTAINER);
             writer.Close();
-            Directory.CreateDirectory(epub.location + EpubStructure.OEBPSLOCATION);
+            Directory.CreateDirectory(epub.location + EpubStructure.CONTENTLOCATION);
             writer = new StreamWriter(File.Create(epub.location + EpubStructure.MIMETYPELOCATION));
             writer.WriteLine(EpubStructure.MIMETYPE);
             writer.Close();
@@ -101,7 +101,7 @@ namespace EpubCreator
                 EpubParser parser = (EpubParser)Activator.CreateInstance(Type.GetType("EpubCreator." + page.parser + "Parser"));
                 string bodyText = parser.Parse(page.url);
                 string pageTitleNoSpaces = page.title.Replace(" ", "");
-                writer = new StreamWriter(File.Create(epub.location + EpubStructure.OEBPSLOCATION + "\\" + pageTitleNoSpaces + ".xhtml"));
+                writer = new StreamWriter(File.Create(epub.location + EpubStructure.CONTENTLOCATION + "\\" + pageTitleNoSpaces + ".xhtml"));
                 writer.WriteLine(
                 string.Format(EpubStructure.COMMONPAGE,
                     string.Format(EpubStructure.COMMONHEADER, epub.title),

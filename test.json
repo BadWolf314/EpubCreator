@@ -1,8 +1,14 @@
 {
    "title": "Dominaria Set Review",
+   "subtitle": "Channel Fireball",
    "author": "Luis Scott-Vargas",
    "pages" : 
    [
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/how-play-limited/dominating-dominaria-limited-2018-04-17",
+         "title": "Dominating Dominaria Limited",
+         "parser": "Wizard"
+      },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-white/",
          "title": "Limited - White",
@@ -22,7 +28,22 @@
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-red/",
          "title": "Limited - Red",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-green/",
+         "title": "Limited - Green",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-gold-artifacts-and-lands/",
+         "title": "Limited - Gold, Artifacts, and Lands",
+         "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\DominariaSetReview\\"
+   "location": "D:\\Epubs\\DominariaSetReview\\",
+   "css" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css"
+   ]
 }

@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace EpubCreator
 {
-    class EpubStructure
+    public class EpubStructure
     {
         public static string MIMETYPE = "application/epub+zip";
         public static string MIMETYPELOCATION = "mimetype";
@@ -18,6 +18,29 @@ namespace EpubCreator
         public static string IMAGELOCATION = CONTENTLOCATION + "\\images";
         public static string CSSLOCATION = CONTENTLOCATION + "\\css";
         public static string PACKAGELOCATION = CONTENTLOCATION + "\\package.opf";
+        public static string COMMONTITLEPAGE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                                            + "\n<html xmlns = \"http://www.w3.org/1999/xhtml\" xmlns:epub=\"http://www.idpf.org/2007/ops\">"
+                                            + "\n<head>"
+                                            + "\n<title></title>"
+                                            + "<link rel=\"stylesheet\""
+                                            + "type=\"text/css\""
+                                            + "\nhref=\"css/style.css\" />"
+                                            + "<link rel = \"stylesheet\""
+                                            + "type=\"text/css\""
+                                            + "href=\"css/media.css\" />"
+                                            + "</head>"
+                                            + "<body>"
+                                            + "<section id = \"title-page\" class=\"element titlepage\" epub:type=\"titlepage\">"
+                                            + "<div class=\"title-page-title-subtitle-block\">"
+                                            + "<h1 class=\"title-page-title\">{0}</h1>"
+                                            + "<h3 class=\"title-page-subtitle\">{1}</h3>"
+                                            + "</div>"
+                                            + "<div class=\"title-page-author-block\">"
+                                            + "<h2 class=\"title-page-author title-page-author-1\">{2}</h2>"
+                                            + "</div>"
+                                            + "</section>"
+                                            + "</body>"
+                                            + "</html>";
         public static string COMMONPAGE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                                             + "\n<html xmlns = \"http://www.w3.org/1999/xhtml\" xmlns:epub=\"http://www.idpf.org/2007/ops\">"
                                             + "\n<head>"
@@ -56,18 +79,49 @@ namespace EpubCreator
                                             + "{0}"
                                             + "\n<figcaption class=\"inline-image-caption\">{1}</figcaption>"
                                             + "\n</figure>";
+        public static string DEFAULTMEDIACSS = "SupportingFiles\\media.css";
+        public static string DEFAULTSTYLECSS = "SupportingFiles\\style.css";
+
+        public static string GetMediaType(string file)
+        {
+            string mediaType = "application/xhtml+xml";
+
+            if (file.EndsWith(".jpg"))
+            {
+                mediaType = "image/jpeg";
+            }
+            else if (file.EndsWith(".png"))
+            {
+                mediaType = "image/png";
+            }
+            else if (file.EndsWith(".svg"))
+            {
+                mediaType = "image/svg+xml";
+            }
+            else if(file.EndsWith(".css"))
+            {
+                mediaType = "text/css";
+            }
+
+            return mediaType;
+        }
     }
 
-    class Epub
+    public class Epub
     {
         public string title { get; set; }
+        public string subtitle { get; set; }
         public string author { get; set; }
         public List<Page> pages { get; set; }
         public string location { get; set; }
-        public Epub() { }
+        public List<string> css { get; set; }
+        public Package package { get; set; }
+        public Epub() {
+            package = new Package();
+        }
     }
 
-    class Page
+    public class Page
     {
         public string url { get; set; }
         public string title { get; set; }
@@ -75,40 +129,117 @@ namespace EpubCreator
         public Page() { }
     }
 
-    class Package
+    [XmlRoot(ElementName = "identifier", Namespace = "http://purl.org/dc/elements/1.1/")]
+    public class Identifier
     {
-        public Metadata metadata { get; set; }
-        public Manifest manifest { get; set; }
-        public Spine spine { get; set; }
-        public Package() { }
+        [XmlAttribute(AttributeName = "id")]
+        public string Id { get; set; }
+        [XmlText]
+        public string Text { get; set; }
     }
 
-    class Metadata
+    [XmlRoot(ElementName = "creator", Namespace = "http://purl.org/dc/elements/1.1/")]
+    public class Creator
     {
-
-        public Metadata() { }
+        [XmlAttribute(AttributeName = "id")]
+        public string Id { get; set; }
+        [XmlText]
+        public string Text { get; set; }
     }
 
-    class Manifest
+    [XmlRoot(ElementName = "meta", Namespace = "http://www.idpf.org/2007/opf")]
+    public class Meta
     {
-        [XmlArray("items")]
-        public Item[] items { get; set; }
-        public Manifest() { }
+        [XmlAttribute(AttributeName = "refines")]
+        public string Refines { get; set; }
+        [XmlAttribute(AttributeName = "property")]
+        public string Property { get; set; }
+        [XmlAttribute(AttributeName = "id")]
+        public string Id { get; set; }
+        [XmlText]
+        public string Text { get; set; }
     }
 
-    class Spine
+    [XmlRoot(ElementName = "metadata", Namespace = "http://www.idpf.org/2007/opf")]
+    public class Metadata
     {
-        public Spine() { }
+        [XmlElement(ElementName = "identifier", Namespace = "http://purl.org/dc/elements/1.1/")]
+        public Identifier Identifier { get; set; }
+        [XmlElement(ElementName = "language", Namespace = "http://purl.org/dc/elements/1.1/")]
+        public string Language { get; set; }
+        [XmlElement(ElementName = "title", Namespace = "http://purl.org/dc/elements/1.1/")]
+        public string Title { get; set; }
+        [XmlElement(ElementName = "creator", Namespace = "http://purl.org/dc/elements/1.1/")]
+        public Creator Creator { get; set; }
+        [XmlElement(ElementName = "meta", Namespace = "http://www.idpf.org/2007/opf")]
+        public List<Meta> Meta { get; set; }
+        [XmlAttribute(AttributeName = "dc", Namespace = "http://www.w3.org/2000/xmlns/")]
+        public string Dc { get; set; }
     }
 
-    class Item
+    [XmlRoot(ElementName = "item", Namespace = "http://www.idpf.org/2007/opf")]
+    public class Item
     {
-        [XmlAttribute]
-        public string id { get; set; }
-        [XmlAttribute]
-        public string href { get; set; }
-        [XmlAttribute("media-type")]
-        public string mediatype { get; set; }
+        [XmlAttribute(AttributeName = "id")]
+        public string Id { get; set; }
+        [XmlAttribute(AttributeName = "properties")]
+        public string Properties { get; set; }
+        [XmlAttribute(AttributeName = "href")]
+        public string Href { get; set; }
+        [XmlAttribute(AttributeName = "media-type")]
+        public string Mediatype { get; set; }
     }
 
-}
+    [XmlRoot(ElementName = "manifest", Namespace = "http://www.idpf.org/2007/opf")]
+    public class Manifest
+    {
+        [XmlElement(ElementName = "item", Namespace = "http://www.idpf.org/2007/opf")]
+        public List<Item> Item { get; set; }
+        public Manifest()
+        {
+            Item = new List<Item>();
+        }
+    }
+
+    [XmlRoot(ElementName = "itemref", Namespace = "http://www.idpf.org/2007/opf")]
+    public class Itemref
+    {
+        [XmlAttribute(AttributeName = "idref")]
+        public string Idref { get; set; }
+    }
+
+    [XmlRoot(ElementName = "spine", Namespace = "http://www.idpf.org/2007/opf")]
+    public class Spine
+    {
+        [XmlElement(ElementName = "itemref", Namespace = "http://www.idpf.org/2007/opf")]
+        public List<Itemref> Itemref { get; set; }
+        public Spine()
+        {
+            Itemref = new List<Itemref>();
+        }
+    }
+
+    [XmlRoot(ElementName = "package", Namespace = "http://www.idpf.org/2007/opf")]
+    public class Package
+    {
+        [XmlElement(ElementName = "metadata", Namespace = "http://www.idpf.org/2007/opf")]
+        public Metadata Metadata { get; set; }
+        [XmlElement(ElementName = "manifest", Namespace = "http://www.idpf.org/2007/opf")]
+        public Manifest Manifest { get; set; }
+        [XmlElement(ElementName = "spine", Namespace = "http://www.idpf.org/2007/opf")]
+        public Spine Spine { get; set; }
+        [XmlAttribute(AttributeName = "xmlns")]
+        public string Xmlns { get; set; }
+        [XmlAttribute(AttributeName = "unique-identifier")]
+        public string Uniqueidentifier { get; set; }
+        [XmlAttribute(AttributeName = "version")]
+        public string Version { get; set; }
+        public Package()
+        {
+            Metadata = new Metadata();
+            Manifest = new Manifest();
+            Spine = new Spine();
+        }
+    }
+
+}//END Of NAMESPACE

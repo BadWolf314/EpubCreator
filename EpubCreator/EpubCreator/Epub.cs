@@ -1,45 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace EpubCreator
 {
     public class EpubStructure
     {
-        public static string MIMETYPE = "application/epub+zip";
+        #region StaticStrings
+
+        public static string EPUBLOCATION = "EPUB\\";
+        public static string CONTENTLOCATION = "CONTENT\\";
+        public static string IMAGELOCATION = "images\\";
+        public static string CSSLOCATION = "css\\";
+        public static string METAINFLOCATION = "META-INF\\";
+        public static string CONTAINERLOCATION = "container.xml";
         public static string MIMETYPELOCATION = "mimetype";
-        public static string CONTAINER = "<? xml version =\"1.0\"?>\n<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">\n\t<rootfiles>\n\t\t<rootfile full-path=\"CONTENT/package.opf\"\n\t\t\tmedia-type=\"application /oebps-package+xml\" />\n\t</rootfiles>\n</container>";
-        public static string METAINFLOCATION = "META-INF";
-        public static string CONTAINERLOCATION = METAINFLOCATION + "\\container.xml";
-        public static string CONTENTLOCATION = "CONTENT";
-        public static string IMAGELOCATION = CONTENTLOCATION + "\\images";
-        public static string CSSLOCATION = CONTENTLOCATION + "\\css";
-        public static string PACKAGELOCATION = CONTENTLOCATION + "\\package.opf";
+        public static string PACKAGELOCATION = "package.opf";
+        public static string TITLEPAGELOCATION = "title-page.xhtml";
+        public static string TOCLOCATION = "toc.xhtml";
+        public static string COVERLOCATION = "cover.xhtml";
+
+        public static string COMMONMIMETYPE = "application/epub+zip";
+        public static string COMMONCONTAINER = "<?xml version=\"1.0\"?>"
+                                            + "\n<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">"
+                                            + "\n\t<rootfiles>"
+                                            + "\n\t\t<rootfile full-path=\"CONTENT/package.opf\""
+                                            + "\n\t\t\tmedia-type=\"application /oebps-package+xml\" />"
+                                            + "\n\t</rootfiles>"
+                                            + "\n</container>";
         public static string COMMONTITLEPAGE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                                             + "\n<html xmlns = \"http://www.w3.org/1999/xhtml\" xmlns:epub=\"http://www.idpf.org/2007/ops\">"
                                             + "\n<head>"
                                             + "\n<title></title>"
-                                            + "<link rel=\"stylesheet\""
-                                            + "type=\"text/css\""
+                                            + "\n<link rel=\"stylesheet\""
+                                            + "\ntype=\"text/css\""
                                             + "\nhref=\"css/style.css\" />"
-                                            + "<link rel = \"stylesheet\""
-                                            + "type=\"text/css\""
-                                            + "href=\"css/media.css\" />"
-                                            + "</head>"
-                                            + "<body>"
-                                            + "<section id = \"title-page\" class=\"element titlepage\" epub:type=\"titlepage\">"
-                                            + "<div class=\"title-page-title-subtitle-block\">"
-                                            + "<h1 class=\"title-page-title\">{0}</h1>"
-                                            + "<h3 class=\"title-page-subtitle\">{1}</h3>"
-                                            + "</div>"
-                                            + "<div class=\"title-page-author-block\">"
-                                            + "<h2 class=\"title-page-author title-page-author-1\">{2}</h2>"
-                                            + "</div>"
-                                            + "</section>"
-                                            + "</body>"
+                                            + "\n<link rel = \"stylesheet\""
+                                            + "\ntype=\"text/css\""
+                                            + "\nhref=\"css/media.css\" />"
+                                            + "\n</head>"
+                                            + "\n<body>"
+                                            + "\n<section id = \"title-page\" class=\"element titlepage\" epub:type=\"titlepage\">"
+                                            + "\n<div class=\"title-page-title-subtitle-block\">"
+                                            + "\n<h1 class=\"title-page-title\">{0}</h1>"
+                                            + "\n<h3 class=\"title-page-subtitle\">{1}</h3>"
+                                            + "\n</div>"
+                                            + "\n<div class=\"title-page-author-block\">"
+                                            + "\n<h2 class=\"title-page-author title-page-author-1\">{2}</h2>"
+                                            + "\n</div>"
+                                            + "\n</section>"
+                                            + "\n</body>"
                                             + "</html>";
         public static string COMMONPAGE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                                             + "\n<html xmlns = \"http://www.w3.org/1999/xhtml\" xmlns:epub=\"http://www.idpf.org/2007/ops\">"
@@ -63,7 +72,7 @@ namespace EpubCreator
                                             + "\n\t<div class=\"title-block\">"
                                             + "\n\t\t<h1 class=\"title\">{1}</h1>"
                                             + "\n\t</div>"
-                                            + "\n\t<br />"
+                                            + "\n\t<h3 class=\"subtitle\">By {3}</h3>"
                                             + "\n\t</div>"
                                             + "\n</header>"
                                             + "\n<div class=\"text text-main\" id=\"{0}-i-text\">"
@@ -79,28 +88,82 @@ namespace EpubCreator
                                             + "{0}"
                                             + "\n<figcaption class=\"inline-image-caption\">{1}</figcaption>"
                                             + "\n</figure>";
-        public static string DEFAULTMEDIACSS = "SupportingFiles\\media.css";
-        public static string DEFAULTSTYLECSS = "SupportingFiles\\style.css";
+        public static string COMMONTOCITEM = "<p id=\"{0}\" class=\"element-title has-no-children\">"
+                                            + "<span class=\"element-number\">{1}. </span>"
+                                            + "<a href=\"{2}\">{3}</a>"
+                                            + "</p>";
+        public static string COMMONTOCBODY = "<section id=\"toc\" epub:type=\"toc\">"
+                                            + "<h3 class=\"toc-title\">Contents</h3>"
+                                            + "<div id=\"contents\">"
+                                            + "<div class=\"toc-frontmatter-group\">"
+                                            + "{0}"
+                                            + "</div>"
+                                            + "</div>"
+                                            + "</section>";
+        public static string COMMONHR = "<figure class=\"inline-image inline-image-kind-photograph\">"
+                                            + "<div class=\"inline-image-container\">"
+                                            + "<img src=\"images/break-section-side.png\" alt=\"\" />"
+                                            + "</div>"
+                                            + "</figure>";
+        public static string COMMONCHAPTERNUMBER = "<header class=\"heading heading-with-title heading-without-image\">"
+                                            + "<div class=\"chapter-title-subtitle-block chapter-title-block-with-chapter-number\">"
+                                            + "<div class=\"chapter-number-block\">"
+                                            + "<h2 class=\"chapter-number\">{0}</h2>"
+                                            + "</div>"
+                                            + "</div>"
+                                            + "</header>";
+        public static string COMMONCOVER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                                            + "\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:epub=\"http://www.idpf.org/2007/ops\">"
+                                            + "\n<head>"
+                                            + "\n<title>{0}</title>"
+                                            + "\n<style type=\"text/css\">"
+                                            + "\nimg.cover-image {{"
+                                            + "\nmax-width: 100%;"
+                                            + "\nmax-height: 100%;"
+                                            + "\ndisplay: block;"
+                                            + "\nmargin-left: auto;"
+                                            + "\nmargin-right: auto;"
+                                            + "\n}}"
+                                            + "\n</style>"
+                                            + "\n</head>"
+                                            + "\n<body class=\"cover\">"
+                                            + "\n<section id = \"cover-image\" epub:type=\"cover\">"
+                                            + "\n<img src=\"{1}\""
+                                            + "\nalt=\"{0}\""
+                                            + "\nclass=\"cover-image\" />"
+                                            + "\n</section>"
+                                            + "\n</body>"
+                                            + "\n</html>";
 
+        #endregion
+
+        /// <summary>
+        /// Gets the media type for the requested file
+        /// </summary>
+        /// <param name="file">file to determine the media type of</param>
+        /// <returns>the media type as a string</returns>
         public static string GetMediaType(string file)
         {
-            string mediaType = "application/xhtml+xml";
+            string mediaType = "";
 
-            if (file.EndsWith(".jpg"))
+            switch(file.Split('.')[file.Split('.').Length - 1])
             {
-                mediaType = "image/jpeg";
-            }
-            else if (file.EndsWith(".png"))
-            {
-                mediaType = "image/png";
-            }
-            else if (file.EndsWith(".svg"))
-            {
-                mediaType = "image/svg+xml";
-            }
-            else if(file.EndsWith(".css"))
-            {
-                mediaType = "text/css";
+                case "jpg":
+                case "jpeg":
+                    mediaType = "image/jpeg";
+                    break;
+                case "png":
+                    mediaType = "image/png";
+                    break;
+                case "svg":
+                    mediaType = "image/svg+xml";
+                    break;
+                case "css":
+                    mediaType = "text/css";
+                    break;
+                default:
+                    mediaType = "application/xhtml+xml";
+                    break;
             }
 
             return mediaType;
@@ -112,12 +175,18 @@ namespace EpubCreator
         public string title { get; set; }
         public string subtitle { get; set; }
         public string author { get; set; }
+        public string cover { get; set; }
         public List<Page> pages { get; set; }
         public string location { get; set; }
-        public List<string> css { get; set; }
+        public List<string> assets { get; set; }
+        public List<string> toc { get; set; }
         public Package package { get; set; }
+
         public Epub() {
             package = new Package();
+            toc = new List<string>();
+            pages = new List<Page>();
+            assets = new List<string>();
         }
     }
 
@@ -126,8 +195,11 @@ namespace EpubCreator
         public string url { get; set; }
         public string title { get; set; }
         public string parser { get; set; }
+        public string author { get; set; }
         public Page() { }
     }
+
+    #region PackageXML
 
     [XmlRoot(ElementName = "identifier", Namespace = "http://purl.org/dc/elements/1.1/")]
     public class Identifier
@@ -241,5 +313,7 @@ namespace EpubCreator
             Spine = new Spine();
         }
     }
+
+    #endregion
 
 }//END Of NAMESPACE

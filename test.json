@@ -1,49 +1,69 @@
 {
    "title": "Dominaria Set Review",
-   "subtitle": "Channel Fireball",
-   "author": "Luis Scott-Vargas",
+   "subtitle": "",
+   "author": "",
    "pages" : 
    [
       {
          "url": "https://magic.wizards.com/en/articles/archive/how-play-limited/dominating-dominaria-limited-2018-04-17",
+         "author": "Luis Scott-Vargas",
          "title": "Dominating Dominaria Limited",
          "parser": "Wizard"
       },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-white/",
+         "author": "Luis Scott-Vargas",
          "title": "Limited - White",
          "parser": "CFB"
       },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-blue/",
+         "author": "Luis Scott-Vargas",
          "title": "Limited - Blue",
          "parser": "CFB"
       },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-black/",
+         "author": "Luis Scott-Vargas",
          "title": "Limited - Black",
          "parser": "CFB"
       },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-red/",
+         "author": "Luis Scott-Vargas",
          "title": "Limited - Red",
          "parser": "CFB"
       },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-green/",
+         "author": "Luis Scott-Vargas",
          "title": "Limited - Green",
          "parser": "CFB"
       },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-limited-set-review-gold-artifacts-and-lands/",
+         "author": "Luis Scott-Vargas",
          "title": "Limited - Gold, Artifacts, and Lands",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/top-8-cards-im-excited-about-from-dominaria/",
+         "author": "Josh Silvestri",
+         "title": "Top 8 Cards I'm Excited About From Dominaria",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/how-play-limited/whirlwind-tour-archetypes-dominaria-2018-04-24",
+         "author": "Marshall Sutcliffe",
+         "title": "A Whirlwind Tour of the Archetypes of Dominaria",
+         "parser": "Wizard"
       }
    ],
    "location": "D:\\Epubs\\DominariaSetReview\\",
-   "css" :
+   "assets" :
    [
       "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css"
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

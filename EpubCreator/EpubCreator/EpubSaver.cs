@@ -25,7 +25,6 @@ namespace EpubCreator
         public void CreateEpubFile()
         {
             Logger.LogInfo("CreateEpubFile");
-            File.Delete(epub.location + epub.title.Replace(" ", "") + EXTENSION);
             ZipFile.CreateFromDirectory(epub.location + EpubStructure.EPUBLOCATION, epub.location + epub.title.Replace(" ", "") + EXTENSION);
         }
 

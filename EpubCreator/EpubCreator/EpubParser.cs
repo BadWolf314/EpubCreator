@@ -9,40 +9,182 @@ namespace EpubCreator
     public abstract class EpubParser
     {
         public string RootNode;
+        public Epub epub;
 
-        public abstract string Parse(string url, Epub epub);
-        
         /// <summary>
-        /// Simple Retry Logic
+        /// 
         /// </summary>
-        /// <param name="retryTimes">Number of times to retry</param>
-        /// <param name="retryMillisInterval">Milliseconds to wait</param>
-        /// <param name="retryAction">What to do</param>
-        public static void Retry(int retryTimes, TimeSpan retryMillisInterval, Action retryAction)
+        /// <param name="url"></param>
+        /// <param name="epub"></param>
+        /// <returns></returns>
+        public string Parse(string url, Epub epub)
         {
-            bool actionDone = false;
-            for (int i = 0; i < retryTimes && !actionDone; ++i)
+            this.epub = epub;
+            HtmlWeb web = new HtmlWeb();
+            HtmlDocument doc = web.Load(url);
+            string bodyText = "";
+            HtmlNode nodes = doc.DocumentNode.SelectNodes(RootNode)[0];
+
+            foreach (HtmlNode node in nodes.ChildNodes)
             {
-                try
+                if (IgnoreNode(node))
                 {
-                    retryAction();
-                    actionDone = true;
                 }
-                catch (Exception e)
+                else if(DecklistNode(node))
                 {
-                    if (i == retryTimes - 1)
-                    {
-                        Logger.LogError("Retries failed, now letting throw out");
-                        throw e;
-                    }
-                    else
-                    {
-                        Logger.LogInfo("Will retry, here's the stack trace for the fail");
-                        Logger.LogInfo(e.Message);
-                        Thread.Sleep(retryMillisInterval);
-                    }
+                    bodyText += DecklistParser(node);
+                }
+                else if (ImageNode(node))
+                {
+                    bodyText += ImageParser(node);
+                }
+                else if (ParagraphNode(node))
+                {
+                    bodyText += ParagraphParser(node);
+                }
+                else if (HrNode(node))
+                {
+                    bodyText += HrParser(node);
+                }
+                else
+                {
+                    bodyText += DefaultParser(node);
                 }
             }
+
+            return bodyText;
+        }
+
+        #region Node Types
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual bool DecklistNode(HtmlNode node)
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual bool IgnoreNode(HtmlNode node)
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual bool ImageNode(HtmlNode node)
+        {
+            return node.InnerHtml.Contains("img");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual bool ParagraphNode(HtmlNode node)
+        {
+            return node.Name == "p";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual bool HrNode(HtmlNode node)
+        {
+            return node.Name == "hr";
+        }
+
+        #endregion
+
+        #region Type Parsers
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual string ParagraphParser(HtmlNode node)
+        {
+            return string.Format(EpubStructure.COMMONPARAGRAPH, node.InnerText);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual string HrParser(HtmlNode node)
+        {
+            return EpubStructure.COMMONHR;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual string DecklistParser(HtmlNode node)
+        {
+            return "\n" + node.OuterHtml;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual string DefaultParser(HtmlNode node)
+        {
+            return "\n" + node.OuterHtml;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual string ImageParser(HtmlNode node)
+        {
+            string returnText = "";
+            foreach (HtmlNode img in node.SelectNodes(".//img"))
+            {
+                returnText += BuildImage(img);
+            }
+            return returnText;
+        }
+
+        #endregion
+
+        #region Image Helpers
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        public virtual string BuildImage(HtmlNode img)
+        {
+            string imgSrc = img.Attributes.Where(x => x.Name == "src")
+                                .FirstOrDefault().Value.Split('?')[0];
+
+            string imgName = imgSrc.Split('/')[imgSrc.Split('/').Length - 1].Split('?')[0].Replace("%", "");
+
+            return string.Format(EpubStructure.COMMONSMALLIMAGECONTAINER,
+                string.Format(EpubStructure.COMMONIMAGE, SaveImage(epub, imgSrc, imgName), "")
+                );
         }
 
         /// <summary>
@@ -77,6 +219,41 @@ namespace EpubCreator
             return EpubStructure.IMAGELOCATION + imgName;
         }
 
+        #endregion
+
+        /// <summary>
+        /// Simple Retry Logic
+        /// </summary>
+        /// <param name="retryTimes">Number of times to retry</param>
+        /// <param name="retryMillisInterval">Milliseconds to wait</param>
+        /// <param name="retryAction">What to do</param>
+        public static void Retry(int retryTimes, TimeSpan retryMillisInterval, Action retryAction)
+        {
+            bool actionDone = false;
+            for (int i = 0; i < retryTimes && !actionDone; ++i)
+            {
+                try
+                {
+                    retryAction();
+                    actionDone = true;
+                }
+                catch (Exception e)
+                {
+                    if (i == retryTimes - 1)
+                    {
+                        Logger.LogError("Retries failed, now letting throw out");
+                        throw e;
+                    }
+                    else
+                    {
+                        Logger.LogInfo("Will retry, here's the stack trace for the fail");
+                        Logger.LogInfo(e.Message);
+                        Thread.Sleep(retryMillisInterval);
+                    }
+                }
+            }
+        }
+
     } //END OF CLASS
 
     /// <summary>
@@ -89,66 +266,64 @@ namespace EpubCreator
             RootNode = "//div[contains(@class, 'postContent')]";
         }
 
+        #region Node Types
+
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="epub"></param>
+        /// <param name="node"></param>
         /// <returns></returns>
-        public override string Parse(string url, Epub epub)
+        public override bool IgnoreNode(HtmlNode node)
         {
-            HtmlWeb web = new HtmlWeb();
-            HtmlDocument doc = web.Load(url);
-            //Use the XPath to Navigate
-            HtmlNode node = doc.DocumentNode.SelectNodes(RootNode)[0];
+            return node.HasClass("spdiv")
+                    || node.HasClass("sp-wrap")
+                    || node.HasClass("sp-head")
+                    || node.HasClass("sp-body")
+                    || node.Name == "#text";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public override bool DecklistNode(HtmlNode node)
+        {
+            return node.HasClass("crystal-catalog-helper-list");
+        }
+
+        #endregion
+
+        #region Type Parsers
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public override string DecklistParser(HtmlNode node)
+        {
             string bodyText = "";
-            for (int i = 0; i < node.ChildNodes.Count; i++)
+            foreach (HtmlNode subList in node.SelectNodes(".//div[contains(@class, 'crystal-catalog-helper-sublist')]"))
             {
-                //If it's a special div we don't care and don't want to add it
-                if (node.ChildNodes[i].HasClass("spdiv")
-                    || node.ChildNodes[i].HasClass("sp-wrap")
-                    || node.ChildNodes[i].HasClass("sp-head")
-                    || node.ChildNodes[i].HasClass("sp-body")
-                    || node.ChildNodes[i].Name == "#text"
-                    )
+                bodyText += "<h3>" + subList.SelectNodes(".//span[contains(@class, 'crystal-catalog-helper-subtitle')]")[0].InnerText + "</h3><ul>";
+                foreach (HtmlNode listItem in subList.SelectNodes(".//a[contains(@class, 'crystal-catalog-helper-list-item')]"))
                 {
-                    //don't do anything
+                    bodyText += "<li>" + listItem.InnerText + "</li>";
                 }
-                else if(node.ChildNodes[i].HasClass("crystal-catalog-helper-list"))
-                {
-                    foreach(HtmlNode subList in node.ChildNodes[i].SelectNodes(".//div[contains(@class, 'crystal-catalog-helper-sublist')]"))
-                    {
-                        bodyText += "<h3>" + subList.SelectNodes(".//span[contains(@class, 'crystal-catalog-helper-subtitle')]")[0].InnerText + "</h3><ul>";
-                        foreach(HtmlNode listItem in subList.SelectNodes(".//a[contains(@class, 'crystal-catalog-helper-list-item')]"))
-                        {
-                            bodyText += "<li>" + listItem.InnerText + "</li>";
-                        }
-                        bodyText += "</ul>";
-                    }
-                }
-                //Special Case if it's an image
-                else if (node.ChildNodes[i].HasClass("crystal-catalog-helper"))
-                {
-                    foreach (HtmlNode img in node.ChildNodes[i].SelectNodes(".//img"))
-                    {
-                        bodyText += ParseImage(epub, img);
-                    }
-                }
-                //Paragraphs are special too
-                else if (node.ChildNodes[i].Name == "p")
-                {
-                    bodyText += string.Format(EpubStructure.COMMONPARAGRAPH, node.ChildNodes[i].InnerText);
-                }
-                //Otherwise just slap the html into the body
-                else
-                {
-                    bodyText += "\n" + node.ChildNodes[i].OuterHtml;
-                }
+                bodyText += "</ul>";
             }
             return bodyText;
         }
 
-        public string ParseImage(Epub epub, HtmlNode img)
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        public override string BuildImage(HtmlNode img)
         {
             string imgSrc = img.Attributes.Where(x => x.Name == "src")
                                 .FirstOrDefault().Value.Split('?')[0];
@@ -173,73 +348,90 @@ namespace EpubCreator
             RootNode = "//*[@id=\"content-detail-page-of-an-article\"]/html/body";
         }
 
+        #region Node Types
+
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="epub"></param>
+        /// <param name="node"></param>
         /// <returns></returns>
-        public override string Parse(string url, Epub epub)
+        public override bool IgnoreNode(HtmlNode node)
         {
-            HtmlWeb web = new HtmlWeb();
-            HtmlDocument doc = web.Load(url);
-            string bodyText = "";
-            HtmlNode node = doc.DocumentNode.SelectNodes(RootNode)[0];
+            return node.Name == "#text"
+                    || node.Name == "aside"
+                    || node.HasClass("module_inline-promo")
+                    || node.InnerHtml.Contains("module_inline-promo");
+        }
 
-            for(int i = 0; i < node.ChildNodes.Count; i++)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public bool FullImageNode(HtmlNode node)
+        {
+            return node.HasClass("figure-wrapper");
+        }
+
+        #endregion
+
+        #region Type Parsers
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public override string ParagraphParser(HtmlNode node)
+        {
+            string bodyText = "";
+            if (node.Attributes["align"] != null && node.Attributes["align"].Value == "center")
             {
-                if(node.ChildNodes[i].Name == "#text"
-                    || node.ChildNodes[i].Name == "aside"
-                    || node.ChildNodes[i].HasClass("module_inline-promo")
-                    || node.ChildNodes[i].InnerHtml.Contains("module_inline-promo"))
-                {
-                }
-                else if (node.ChildNodes[i].HasClass("figure-wrapper"))
-                {
-                    string imgText = "";
-                    foreach (HtmlNode child in node.ChildNodes[i].SelectNodes(".//img"))
-                    {
-                        imgText += ParseImage(epub, child);
-                    }
-                    string caption = node.ChildNodes[i].SelectNodes(".//figcaption")[0].InnerText;
-                    bodyText += string.Format(EpubStructure.COMMONFULLIMAGEWITHCAPTIONCONTAINER, imgText, caption);
-                }
-                else if(node.ChildNodes[i].InnerHtml.Contains("img"))
-                {
-                    string imgText = "";
-                    foreach (HtmlNode child in node.ChildNodes[i].SelectNodes(".//img"))
-                    {
-                        imgText += ParseImage(epub, child);
-                    }
-                    bodyText += string.Format(EpubStructure.COMMONSMALLIMAGECONTAINER, imgText);
-                }
-                else if(node.ChildNodes[i].Name == "p")
-                {
-                    if (node.ChildNodes[i].Attributes["align"] != null && node.ChildNodes[i].Attributes["align"].Value == "center")
-                    {
-                        bodyText += string.Format(EpubStructure.COMMONCHAPTERNUMBER,
-                            node.ChildNodes[i].InnerText.Substring(0, node.ChildNodes[i].InnerText.Length - 1).ToUpper());
-                    }
-                    else if (!node.ChildNodes[i].InnerHtml.Contains("target=\"_blank\""))
-                    {
-                        bodyText += string.Format(EpubStructure.COMMONPARAGRAPH, node.ChildNodes[i].InnerHtml
-                            .Replace("&mdash;", " - ").Replace("&nbsp;", " ")
-                            .Replace("<br>", ""));
-                    }
-                }
-                else if (node.ChildNodes[i].Name == "hr")
-                {
-                    bodyText += EpubStructure.COMMONHR;
-                }
-                else
-                {
-                    bodyText += "\n" + node.ChildNodes[i].OuterHtml;
-                }
+                bodyText += string.Format(EpubStructure.COMMONCHAPTERNUMBER,
+                    node.InnerText.Substring(0, node.InnerText.Length - 1).ToUpper());
+            }
+            else if (!node.InnerHtml.Contains("target=\"_blank\""))
+            {
+                bodyText += string.Format(EpubStructure.COMMONPARAGRAPH, node.InnerHtml
+                    .Replace("&mdash;", " - ").Replace("&nbsp;", " ")
+                    .Replace("<br>", ""));
             }
             return bodyText;
         }
 
-        public string ParseImage(Epub epub, HtmlNode img)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public override string ImageParser(HtmlNode node)
+        {
+            string bodyText = "";
+            if (FullImageNode(node))
+            {
+                string imgText = "";
+                foreach (HtmlNode child in node.SelectNodes(".//img"))
+                {
+                    imgText += BuildImage(child);
+                }
+                string caption = node.SelectNodes(".//figcaption")[0].InnerText;
+                bodyText += string.Format(EpubStructure.COMMONFULLIMAGEWITHCAPTIONCONTAINER, imgText, caption);
+            }
+            else
+            {
+                bodyText += string.Format(EpubStructure.COMMONSMALLIMAGECONTAINER, base.ImageParser(node));
+            }
+            return bodyText;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        public override string BuildImage(HtmlNode img)
         {
             string imgUrl = img.Attributes.Where(x => x.Name == "src")
                             .FirstOrDefault().Value.Replace("&amp;", "&");
@@ -248,7 +440,7 @@ namespace EpubCreator
             if (imgName.EndsWith(".ashx"))
             {
                 imgName = imgUrl.Split('?')[imgUrl.Split('?').Length - 1];
-                imgName = imgName.Split('&').Where(x => x.StartsWith("name=")).FirstOrDefault().Substring(5) + ".jpg";
+                imgName = imgName.Split('&').Where(x => x.StartsWith("name=")).FirstOrDefault().Replace("%", "").Substring(5) + ".jpg";
             }
             return string.Format(EpubStructure.COMMONIMAGE,
                 SaveImage(epub, imgUrl, imgName), "");

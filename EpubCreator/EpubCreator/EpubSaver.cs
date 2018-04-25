@@ -22,15 +22,19 @@ namespace EpubCreator
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
         public void CreateEpubFile()
         {
+            Logger.LogInfo("CreateEpubFile");
             File.Delete(epub.location + epub.title.Replace(" ", "") + EXTENSION);
             ZipFile.CreateFromDirectory(epub.location + EpubStructure.EPUBLOCATION, epub.location + epub.title.Replace(" ", "") + EXTENSION);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void PopulateStructure()
         {
+            Logger.LogInfo("PopulateStructure");
             CleanUpOldStructure();
             CreateDirectories();
             CreateContainerAndMimetype();
@@ -67,9 +71,9 @@ namespace EpubCreator
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
         public void CleanUpOldStructure()
         {
+            Logger.LogInfo("CleanUpOldStructure");
             try
             {
                 Directory.Delete(epub.location, true);
@@ -85,9 +89,9 @@ namespace EpubCreator
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
         public void CreateDirectories()
         {
+            Logger.LogInfo("CreateDirectories");
             Directory.CreateDirectory(epub.location);
             Directory.CreateDirectory(epub.location + EpubStructure.EPUBLOCATION);
             Directory.CreateDirectory(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.METAINFLOCATION);
@@ -99,9 +103,9 @@ namespace EpubCreator
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
         public void CreateContainerAndMimetype()
         {
+            Logger.LogInfo("CreateContainerAndMimetype");
             StreamWriter writer = new StreamWriter(
                 File.Create(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.METAINFLOCATION + EpubStructure.CONTAINERLOCATION));
             writer.WriteLine(EpubStructure.COMMONCONTAINER);
@@ -113,42 +117,46 @@ namespace EpubCreator
             writer.Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void CreateCover()
         {
+            Logger.LogInfo("CreateCover");
             StreamWriter writer = new StreamWriter(
                 File.Create(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.COVERLOCATION));
             writer.WriteLine(
                 string.Format(EpubStructure.COMMONCOVER, epub.title, EpubStructure.IMAGELOCATION + EpubStructure.COVERLOCATION));
             writer.Close();
             File.Copy(epub.cover, epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + EpubStructure.COVERLOCATION, true);
-            AddToSpine(EpubStructure.COVERLOCATION);
-            AddToManifest(EpubStructure.COVERLOCATION, EpubStructure.COVERLOCATION);
+            epub.AddToSpine(EpubStructure.COVERLOCATION);
+            epub.AddToManifest(EpubStructure.COVERLOCATION, EpubStructure.COVERLOCATION);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
         public void CreateTitlePage()
         {
+            Logger.LogInfo("CreateTitlePage");
             StreamWriter writer = new StreamWriter(
                 File.Create(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.TITLEPAGELOCATION));
             writer.WriteLine(string.Format(EpubStructure.COMMONTITLEPAGE, epub.title, epub.subtitle, epub.author));
             writer.Close();
-            AddToSpine(EpubStructure.TITLEPAGELOCATION);
-            AddToManifest(EpubStructure.TITLEPAGELOCATION, EpubStructure.TITLEPAGELOCATION);
+            epub.AddToSpine(EpubStructure.TITLEPAGELOCATION);
+            epub.AddToManifest(EpubStructure.TITLEPAGELOCATION, EpubStructure.TITLEPAGELOCATION);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
         /// <param name="css"></param>
         public void CreateCSS(string css)
         {
+            Logger.LogInfo("CreateCSS");
             string cssFileName = css.Split('\\')[css.Split('\\').Length - 1];
             File.Copy(css, epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.CSSLOCATION + cssFileName, true);
-            AddToManifest(cssFileName, EpubStructure.CSSLOCATION + cssFileName);
+            epub.AddToManifest(cssFileName, EpubStructure.CSSLOCATION + cssFileName);
         }
 
         /// <summary>
@@ -157,18 +165,19 @@ namespace EpubCreator
         /// <param name="img"></param>
         public void CreateImage(string img)
         {
+            Logger.LogInfo("CreateImage");
             string imgFileName = img.Split('\\')[img.Split('\\').Length - 1];
             File.Copy(img, epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgFileName, true);
-            AddToManifest(imgFileName, EpubStructure.IMAGELOCATION + imgFileName);
+            epub.AddToManifest(imgFileName, EpubStructure.IMAGELOCATION + imgFileName);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
         /// <param name="page"></param>
         public void CreatePage(Page page)
         {
+            Logger.LogInfo("CreatePage");
             Logger.LogInfo("Parsing " + page.title + " with " + page.parser + "Parser");
 
             EpubParser parser = (EpubParser)Activator.CreateInstance(Type.GetType("EpubCreator." + page.parser + "Parser"));
@@ -185,8 +194,8 @@ namespace EpubCreator
             ));
             writer.Close();
 
-            AddToManifest(pageTitleNoSpaces, pageTitleNoSpaces);
-            AddToSpine(pageTitleNoSpaces);
+            epub.AddToManifest(pageTitleNoSpaces, pageTitleNoSpaces);
+            epub.AddToSpine(pageTitleNoSpaces);
         }
 
         /// <summary>
@@ -194,6 +203,7 @@ namespace EpubCreator
         /// </summary>
         public void CreateTOC()
         {
+            Logger.LogInfo("CreateTOC");
             StreamWriter writer = new StreamWriter(File.Create(epub.location + EpubStructure.EPUBLOCATION +
                 EpubStructure.CONTENTLOCATION + EpubStructure.TOCLOCATION));
 
@@ -211,8 +221,8 @@ namespace EpubCreator
                 string.Format(EpubStructure.COMMONTOCBODY, bodyText)
             ));
             writer.Close();
-            AddToManifest(EpubStructure.TOCLOCATION, EpubStructure.TOCLOCATION);
-            AddToSpine(EpubStructure.TOCLOCATION);
+            epub.AddToManifest(EpubStructure.TOCLOCATION, EpubStructure.TOCLOCATION);
+            epub.AddToSpine(EpubStructure.TOCLOCATION);
         }
 
         #region Package
@@ -220,35 +230,9 @@ namespace EpubCreator
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="epub"></param>
-        /// <param name="idref"></param>
-        public void AddToSpine(string idref)
-        {
-            epub.package.Spine.Itemref.Add(new Itemref()
-            {
-                Idref = idref.Replace('.', '-')
-            });
-            epub.toc.Add(idref);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="epub"></param>
-        /// <param name="id"></param>
-        /// <param name="href"></param>
-        public void AddToManifest(string id, string href)
-        {
-            epub.package.Manifest.Item.Add(new Item()
-            {
-                Id = id.Replace('.', '-'),
-                Href = href,
-                Mediatype = id
-            });
-        }
-
         public void CreatePackageManifest()
         {
+            Logger.LogInfo("CreatePackageManifest");
             epub.package.Metadata.Identifier = new Identifier() { Id = "uid", Text = "67a3bf52-c649-4394-833c-f77f0a054aa2" };
             epub.package.Metadata.Language = "en-US";
             epub.package.Metadata.Title = epub.title;
@@ -258,8 +242,12 @@ namespace EpubCreator
             epub.package.Metadata.Meta.Add(new Meta() { Property = "dcterms:modified", Text = DateTime.Now.ToLongTimeString() });
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void CreatePackage()
         {
+            Logger.LogInfo("CreatePackage");
             CreatePackageManifest();
             XmlSerializer xml = new XmlSerializer(typeof(Package));
             TextWriter textWriter = new StreamWriter(

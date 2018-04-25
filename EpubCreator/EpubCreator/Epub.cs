@@ -5,7 +5,7 @@ namespace EpubCreator
 {
     public class EpubStructure
     {
-        #region StaticStrings
+        #region Location Strings
 
         public static string EPUBLOCATION = "EPUB\\";
         public static string CONTENTLOCATION = "CONTENT\\";
@@ -18,6 +18,10 @@ namespace EpubCreator
         public static string TITLEPAGELOCATION = "title-page.xhtml";
         public static string TOCLOCATION = "toc.xhtml";
         public static string COVERLOCATION = "cover.xhtml";
+
+        #endregion
+
+        #region Common Templates
 
         public static string COMMONMIMETYPE = "application/epub+zip";
         public static string COMMONCONTAINER = "<?xml version=\"1.0\"?>"
@@ -170,6 +174,9 @@ namespace EpubCreator
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Epub
     {
         public string title { get; set; }
@@ -188,6 +195,38 @@ namespace EpubCreator
             pages = new List<Page>();
             assets = new List<string>();
         }
+
+        #region Helper Functions
+
+        /// <summary>
+        /// Add an object to the spine
+        /// </summary>
+        /// <param name="idref">idref to use</param>
+        public void AddToSpine(string idref)
+        {
+            package.Spine.Itemref.Add(new Itemref()
+            {
+                Idref = idref.Replace('.', '-')
+            });
+            toc.Add(idref);
+        }
+
+        /// <summary>
+        /// Add an object to the Mainifest
+        /// </summary>
+        /// <param name="id">id to use</param>
+        /// <param name="href">link to use</param>
+        public void AddToManifest(string id, string href)
+        {
+            package.Manifest.Item.Add(new Item()
+            {
+                Id = id.Replace('.', '-'),
+                Href = href,
+                Mediatype = id
+            });
+        }
+
+        #endregion
     }
 
     public class Page

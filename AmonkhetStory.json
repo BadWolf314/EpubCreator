@@ -1,0 +1,113 @@
+{
+   "title": "Amonkhet",
+   "subtitle": "Magic Story",
+   "author": "R and D Narrative Team",
+   "cover": "",
+   
+   "pages": 
+   [
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/impact-2017-03-29",
+         "author": "Michael Yichao",
+         "title": "IMPACT",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/trust-2017-04-05",
+         "author": "James Wyatt",
+         "title": "TRUST",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/writing-wall-2017-04-12",
+         "author": "Alison Luhrs",
+         "title": "THE WRITING ON THE WALL",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/servants-2017-04-19",
+         "author": "Kelly Digges",
+         "title": "SERVANTS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/hand-moves-2017-04-26",
+         "author": "Ken Troop",
+         "title": "THE HAND THAT MOVES",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/brazen-2017-05-03",
+         "author": "Michael Yichao",
+         "title": "BRAZEN",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/trespass-2017-05-10",
+         "author": "Michael Yichao",
+         "title": "TRESPASS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/judgment-2017-05-17",
+         "author": "Doug Beyer and Alison Luhrs",
+         "title": "JUDGMENT",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/hour-revelation-2017-06-07",
+         "author": "Alison Luhrs",
+         "title": "THE HOUR OF REVELATION",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/feast-2017-06-14",
+         "author": "Alison Luhrs",
+         "title": "FEAST",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/hour-glory-2017-06-21",
+         "author": "Michael Yichao",
+         "title": "HOUR OF GLORY",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/hour-promise-2017-06-28",
+         "author": "Alison Luhrs",
+         "title": "THE HOUR OF PROMISE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/favor-2017-07-05",
+         "author": "Michael Yichao",
+         "title": "FAVOR",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/hour-eternity-2017-07-12",
+         "author": "Ken Troop",
+         "title": "HOUR OF ETERNITY",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/endure-2017-07-19",
+         "author": "Michael Yichao",
+         "title": "ENDURE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/hour-devastation-2017-07-26",
+         "author": "Ken Troop",
+         "title": "HOUR OF DEVASTATION",
+         "parser": "Wizard"
+      }
+   ],
+   "location": "D:\\Epubs\\Amonkhet\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

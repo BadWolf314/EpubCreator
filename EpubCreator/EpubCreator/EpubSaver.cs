@@ -112,7 +112,7 @@ namespace EpubCreator
 
             writer = new StreamWriter(
                 File.Create(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.MIMETYPELOCATION));
-            writer.WriteLine(EpubStructure.COMMONMIMETYPE);
+            writer.Write(EpubStructure.COMMONMIMETYPE);
             writer.Close();
         }
 
@@ -122,14 +122,16 @@ namespace EpubCreator
         public void CreateCover()
         {
             Logger.LogInfo("CreateCover");
+            string imgFileName = epub.cover.Split('\\')[epub.cover.Split('\\').Length - 1];
             StreamWriter writer = new StreamWriter(
                 File.Create(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.COVERLOCATION));
             writer.WriteLine(
-                string.Format(EpubStructure.COMMONCOVER, epub.title, EpubStructure.IMAGELOCATION + EpubStructure.COVERLOCATION));
+                string.Format(EpubStructure.COMMONCOVER, epub.title, (EpubStructure.IMAGELOCATION + imgFileName).Replace("\\", "/")));
             writer.Close();
-            File.Copy(epub.cover, epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + EpubStructure.COVERLOCATION, true);
+            File.Copy(epub.cover, epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgFileName, true);
             epub.AddToSpine(EpubStructure.COVERLOCATION);
             epub.AddToManifest(EpubStructure.COVERLOCATION, EpubStructure.COVERLOCATION);
+            epub.AddToManifest(imgFileName, EpubStructure.IMAGELOCATION + imgFileName);
         }
 
         /// <summary>
@@ -220,7 +222,7 @@ namespace EpubCreator
                 string.Format(EpubStructure.COMMONTOCBODY, bodyText)
             ));
             writer.Close();
-            epub.AddToManifest(EpubStructure.TOCLOCATION, EpubStructure.TOCLOCATION);
+            epub.AddToManifest(EpubStructure.TOCLOCATION, EpubStructure.TOCLOCATION, "nav");
             epub.AddToSpine(EpubStructure.TOCLOCATION);
         }
 
@@ -238,7 +240,7 @@ namespace EpubCreator
             epub.package.Metadata.Creator = new Creator() { Id = "creator", Text = epub.author };
             epub.package.Metadata.Meta = new List<Meta>();
             epub.package.Metadata.Meta.Add(new Meta() { Id = "role", Property = "role", Refines = "#creator", Text = "aut" });
-            epub.package.Metadata.Meta.Add(new Meta() { Property = "dcterms:modified", Text = DateTime.Now.ToLongTimeString() });
+            epub.package.Metadata.Meta.Add(new Meta() { Property = "dcterms:modified", Text = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ") });
         }
 
         /// <summary>
@@ -248,6 +250,8 @@ namespace EpubCreator
         {
             Logger.LogInfo("CreatePackage");
             CreatePackageManifest();
+            epub.package.Version = "3.0";
+            epub.package.Uniqueidentifier = "uid";
             XmlSerializer xml = new XmlSerializer(typeof(Package));
             TextWriter textWriter = new StreamWriter(
                 File.Create(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.PACKAGELOCATION));

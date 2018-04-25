@@ -1,7 +1,7 @@
 {
    "title": "Dominaria Set Review",
-   "subtitle": "",
-   "author": "",
+   "subtitle": "Various",
+   "author": "Various",
    "pages" : 
    [
       {
@@ -57,6 +57,12 @@
          "author": "Marshall Sutcliffe",
          "title": "A Whirlwind Tour of the Archetypes of Dominaria",
          "parser": "Wizard"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/an-early-pick-order-list-for-dominaria/",
+         "author": "Frank Karsten",
+         "title": "An Early Pick Order List for Dominaria",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\DominariaSetReview\\",

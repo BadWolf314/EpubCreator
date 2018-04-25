@@ -28,7 +28,7 @@ namespace EpubCreator
                                             + "\n<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">"
                                             + "\n\t<rootfiles>"
                                             + "\n\t\t<rootfile full-path=\"CONTENT/package.opf\""
-                                            + "\n\t\t\tmedia-type=\"application /oebps-package+xml\" />"
+                                            + "\n\t\t\tmedia-type=\"application/oebps-package+xml\" />"
                                             + "\n\t</rootfiles>"
                                             + "\n</container>";
         public static string COMMONTITLEPAGE = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -92,18 +92,17 @@ namespace EpubCreator
                                             + "{0}"
                                             + "\n<figcaption class=\"inline-image-caption\">{1}</figcaption>"
                                             + "\n</figure>";
-        public static string COMMONTOCITEM = "<p id=\"{0}\" class=\"element-title has-no-children\">"
-                                            + "<span class=\"element-number\">{1}. </span>"
-                                            + "<a href=\"{2}\">{3}</a>"
-                                            + "</p>";
+        public static string COMMONTOCITEM = "<li id=\"{0}\" class=\"element-title has-no-children\">"
+                                            + "\n<a href=\"{2}\">{3}</a>"
+                                            + "\n</li>";
         public static string COMMONTOCBODY = "<section id=\"toc\" epub:type=\"toc\">"
-                                            + "<h3 class=\"toc-title\">Contents</h3>"
-                                            + "<div id=\"contents\">"
-                                            + "<div class=\"toc-frontmatter-group\">"
-                                            + "{0}"
-                                            + "</div>"
-                                            + "</div>"
-                                            + "</section>";
+                                            + "\n<h3 class=\"toc-title\">Contents</h3>"
+                                            + "\n<nav epub:type=\"toc\">"
+                                            + "\n<ol id=\"contents\">"
+                                            + "\n{0}"
+                                            + "\n</ol>"
+                                            + "\n</nav>"
+                                            + "\n</section>";
         public static string COMMONHR = "<figure class=\"inline-image inline-image-kind-photograph\">"
                                             + "<div class=\"inline-image-container\">"
                                             + "<img src=\"images/break-section-side.png\" alt=\"\" />"
@@ -206,7 +205,10 @@ namespace EpubCreator
         {
             package.Spine.Itemref.Add(new Itemref()
             {
-                Idref = idref.Replace('.', '-')
+                Idref = idref
+                    .Replace('.', '-')
+                    .Replace(',', '-')
+                    .Replace('+', '-')
             });
             toc.Add(idref);
         }
@@ -216,14 +218,33 @@ namespace EpubCreator
         /// </summary>
         /// <param name="id">id to use</param>
         /// <param name="href">link to use</param>
-        public void AddToManifest(string id, string href)
+        public void AddToManifest(string id, string href, string properties = "")
         {
-            package.Manifest.Item.Add(new Item()
+            Item item = new Item()
             {
-                Id = id.Replace('.', '-'),
-                Href = href,
-                Mediatype = id
-            });
+                Id = id
+                    .Replace('.', '-')
+                    .Replace(',', '-')
+                    .Replace('+', '-')
+                    ,
+                Href = href.Replace("\\", "/"),
+                Mediatype = EpubStructure.GetMediaType(id)
+            };
+
+            if(!string.IsNullOrEmpty(properties))
+            {
+                item.Properties = properties;
+            }
+
+            if(char.IsDigit(item.Id[0]))
+            {
+                item.Id = item.Id.Substring(1);
+            }
+
+            if(!package.Manifest.Item.Exists(x => x.Id == item.Id && x.Href == item.Href && x.Mediatype == item.Mediatype))
+            {
+                package.Manifest.Item.Add(item);
+            }
         }
 
         #endregion

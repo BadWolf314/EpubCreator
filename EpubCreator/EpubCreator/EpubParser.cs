@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
@@ -148,7 +149,9 @@ namespace EpubCreator
         /// <returns></returns>
         public virtual string DefaultParser(HtmlNode node)
         {
-            return "\n" + node.OuterHtml;
+            return "\n" + node.OuterHtml
+                .Replace("<br>", "<br />")
+                .Replace("&mdash;", " - ");
         }
 
         /// <summary>
@@ -201,11 +204,14 @@ namespace EpubCreator
             {
                 epub.AddToManifest(imgName, EpubStructure.IMAGELOCATION + imgName);
 
-                EpubParser.Retry(3, TimeSpan.FromSeconds(60), () =>
+                if (!File.Exists(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgName))
                 {
-                    webClient.DownloadFile(url,
-                      epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgName);
-                });
+                    EpubParser.Retry(3, TimeSpan.FromSeconds(60), () =>
+                  {
+                      webClient.DownloadFile(url,
+                        epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgName);
+                  });
+                }
             }
             catch (Exception ex)
             {
@@ -216,7 +222,7 @@ namespace EpubCreator
             {
                 webClient.Dispose();
             }
-            return EpubStructure.IMAGELOCATION + imgName;
+            return (EpubStructure.IMAGELOCATION + imgName).Replace("\\", "/");
         }
 
         #endregion
@@ -393,9 +399,36 @@ namespace EpubCreator
             else if (!node.InnerHtml.Contains("target=\"_blank\""))
             {
                 bodyText += string.Format(EpubStructure.COMMONPARAGRAPH, node.InnerHtml
-                    .Replace("&mdash;", " - ").Replace("&nbsp;", " ")
-                    .Replace("<br>", ""));
+                    .Replace("&mdash;", " - ")
+                    .Replace("&ndash;", " - ")
+                    .Replace("&nbsp;", " ")
+                    .Replace("&eacute;", "é")
+                    .Replace("&agrave;", "à")
+                    .Replace("<br>", "")
+                    .Replace("<nbsp>", " ")
+                    .Replace("</nbsp>", " ")
+                    .Replace("&ccedil;", "ç")
+                    .Replace("&iuml;", "ï")
+                    );
             }
+            return bodyText;
+        }
+
+        public override string DefaultParser(HtmlNode node)
+        {
+            string bodyText = "";
+            if (node.InnerHtml.Contains("<p>"))
+            {
+                foreach (HtmlNode p in node.SelectNodes(".//p"))
+                {
+                    bodyText += ParagraphParser(p);
+                }
+            }
+            else
+            {
+                bodyText = base.DefaultParser(node);
+            }
+            
             return bodyText;
         }
 
@@ -440,7 +473,7 @@ namespace EpubCreator
             if (imgName.EndsWith(".ashx"))
             {
                 imgName = imgUrl.Split('?')[imgUrl.Split('?').Length - 1];
-                imgName = imgName.Split('&').Where(x => x.StartsWith("name=")).FirstOrDefault().Replace("%", "").Substring(5) + ".jpg";
+                imgName = imgName.Split('&').Where(x => x.StartsWith("name=")).FirstOrDefault().Replace("%", "").Substring(5) + ".png";
             }
             return string.Format(EpubStructure.COMMONIMAGE,
                 SaveImage(epub, imgUrl, imgName), "");

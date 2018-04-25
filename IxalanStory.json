@@ -1,0 +1,95 @@
+{
+   "title": "Ixalan",
+   "subtitle": "Magic Story",
+   "author": "R and D Narrative Team",
+   "cover": "",
+   
+   "pages": 
+   [
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/jace-alone-2017-09-06",
+         "author": "R and D Narrative Team",
+         "title": "JACE, ALONE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/question-confidence-2017-09-13",
+         "author": "R and D Narrative Team",
+         "title": "A QUESTION OF CONFIDENCE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/talented-captain-vraska-2017-09-20",
+         "author": "R and D Narrative Team",
+         "title": "THE TALENTED CAPTAIN VRASKA",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/shapers-2017-09-27",
+         "author": "R and D Narrative Team",
+         "title": "THE SHAPERS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/something-else-entirely-2017-10-04",
+         "author": "R and D Narrative Team",
+         "title": "SOMETHING ELSE ENTIRELY",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/race-part-1-2017-10-11",
+         "author": "R and D Narrative Team",
+         "title": "THE RACE, PART 1",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/race-part-2-2017-10-18",
+         "author": "R and D Narrative Team",
+         "title": "THE RACE, PART 2",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/flood-2018-01-10",
+         "author": "R and D Narrative Team",
+         "title": "THE FLOOD",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/glimpse-far-side-sun-2018-01-17",
+         "author": "R and D Narrative Team",
+         "title": "GLIMPSE THE FAR SIDE OF THE SUN",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/arbiter-law-left-chaos-his-wake-2018-01-24",
+         "author": "R and D Narrative Team",
+         "title": "THE ARBITER OF LAW LEFT CHAOS IN HIS WAKE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/sabotage-2018-01-31",
+         "author": "R and D Narrative Team",
+         "title": "SABOTAGE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/who-tells-stories-2018-02-07",
+         "author": "R and D Narrative Team",
+         "title": "WHO TELLS THE STORIES",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/wool-over-eyes-2018-02-14",
+         "author": "R and D Narrative Team",
+         "title": "WOOL OVER THE EYES",
+         "parser": "Wizard"
+      }
+   ],
+   "location": "D:\\Epubs\\Ixalan\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

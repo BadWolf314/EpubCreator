@@ -7,6 +7,9 @@ using System.Threading;
 
 namespace EpubCreator
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class EpubParser
     {
         public string RootNode;
@@ -340,6 +343,18 @@ namespace EpubCreator
     /// <summary>
     /// 
     /// </summary>
+    public class GCParser : EpubParser
+    {
+        public GCParser()
+        {
+            RootNode = "//div[contains(@class, 'body-block')]";
+        }
+    }
+
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class CFBParser : EpubParser
     {
         public CFBParser()
@@ -377,6 +392,11 @@ namespace EpubCreator
 
         #region Type Parsers
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public override string ImageParser(HtmlNode node)
         {
             if(!(node.Name == "a" && node.Attributes.Where(x => x.Name == "href").FirstOrDefault() != null && node.Attributes.Where(x => x.Name == "href").FirstOrDefault().Value.Contains("previews")))

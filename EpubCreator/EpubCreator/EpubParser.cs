@@ -47,6 +47,10 @@ namespace EpubCreator
                 {
                     bodyText += HrParser(node);
                 }
+                else if(ListNode(node))
+                {
+                    bodyText += ListParser(node);
+                }
                 else
                 {
                     bodyText += DefaultParser(node);
@@ -85,7 +89,7 @@ namespace EpubCreator
         /// <returns></returns>
         public virtual bool ImageNode(HtmlNode node)
         {
-            return node.InnerHtml.Contains("img");
+            return node.InnerHtml.Contains("img") || node.Name == "img";
         }
 
         /// <summary>
@@ -108,6 +112,16 @@ namespace EpubCreator
             return node.Name == "hr";
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual bool ListNode(HtmlNode node)
+        {
+            return node.Name == "ol" || node.Name == "ul";
+        }
+
         #endregion
 
         #region Type Parsers
@@ -119,7 +133,17 @@ namespace EpubCreator
         /// <returns></returns>
         public virtual string ParagraphParser(HtmlNode node)
         {
-            return string.Format(EpubStructure.COMMONPARAGRAPH, node.InnerText);
+            return string.Format(EpubStructure.COMMONPARAGRAPH, node.InnerText
+                    .Replace("&mdash;", " - ")
+                    .Replace("&ndash;", " - ")
+                    .Replace("&nbsp;", " ")
+                    .Replace("&eacute;", "é")
+                    .Replace("&agrave;", "à")
+                    .Replace("<br>", "")
+                    .Replace("<nbsp>", " ")
+                    .Replace("</nbsp>", " ")
+                    .Replace("&ccedil;", "ç")
+                    .Replace("&iuml;", "ï"));
         }
 
         /// <summary>
@@ -150,8 +174,17 @@ namespace EpubCreator
         public virtual string DefaultParser(HtmlNode node)
         {
             return "\n" + node.OuterHtml
-                .Replace("<br>", "<br />")
-                .Replace("&mdash;", " - ");
+                     .Replace("&mdash;", " - ")
+                    .Replace("&ndash;", " - ")
+                    .Replace("&nbsp;", " ")
+                    .Replace("&eacute;", "é")
+                    .Replace("&agrave;", "à")
+                    .Replace("<br>", "")
+                    .Replace("<nbsp>", " ")
+                    .Replace("</nbsp>", " ")
+                    .Replace("&ccedil;", "ç")
+                    .Replace("&iuml;", "ï")
+                    ;
         }
 
         /// <summary>
@@ -162,11 +195,53 @@ namespace EpubCreator
         public virtual string ImageParser(HtmlNode node)
         {
             string returnText = "";
-            foreach (HtmlNode img in node.SelectNodes(".//img"))
+            if (node.Name == "img")
             {
-                returnText += BuildImage(img);
+                returnText += BuildImage(node);
+            }
+            else
+            {
+                foreach (HtmlNode img in node.SelectNodes(".//img"))
+                {
+                    returnText += BuildImage(img);
+                }
             }
             return returnText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public virtual string ListParser(HtmlNode node)
+        {
+            string returnText = "";
+            returnText += string.Format("<{0}>", node.Name);
+            foreach(HtmlNode li in node.SelectNodes(".//li"))
+            {
+                returnText += "<li>" + Sanitize(li.InnerHtml) + "</li>";
+            }
+            returnText += string.Format("</{0}>", node.Name);
+            return returnText;
+        }
+
+        public virtual string Sanitize(string html)
+        {
+            return html
+                .Replace("&mdash;", " - ")
+                .Replace("&ndash;", " - ")
+                .Replace("&nbsp;", " ")
+                .Replace("&eacute;", "é")
+                .Replace("&agrave;", "à")
+                .Replace("<br>", "")
+                .Replace("<nbsp>", " ")
+                .Replace("</nbsp>", " ")
+                .Replace("&ccedil;", "ç")
+                .Replace("&iuml;", "ï")
+                .Replace("<p>", "")
+                .Replace("</p>", "")
+                ;
         }
 
         #endregion
@@ -302,6 +377,16 @@ namespace EpubCreator
 
         #region Type Parsers
 
+        public override string ImageParser(HtmlNode node)
+        {
+            if(!(node.Name == "a" && node.Attributes.Where(x => x.Name == "href").FirstOrDefault() != null && node.Attributes.Where(x => x.Name == "href").FirstOrDefault().Value.Contains("previews")))
+            {
+                return base.ImageParser(node);
+            }
+
+            return "";
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -333,7 +418,7 @@ namespace EpubCreator
         {
             string imgSrc = img.Attributes.Where(x => x.Name == "src")
                                 .FirstOrDefault().Value.Split('?')[0];
-            if (!imgSrc.StartsWith("https:"))
+            if (!imgSrc.StartsWith("https:") && !imgSrc.StartsWith("http:"))
             {
                 imgSrc = "https:" + imgSrc;
             }
@@ -398,22 +483,16 @@ namespace EpubCreator
             }
             else if (!node.InnerHtml.Contains("target=\"_blank\""))
             {
-                bodyText += string.Format(EpubStructure.COMMONPARAGRAPH, node.InnerHtml
-                    .Replace("&mdash;", " - ")
-                    .Replace("&ndash;", " - ")
-                    .Replace("&nbsp;", " ")
-                    .Replace("&eacute;", "é")
-                    .Replace("&agrave;", "à")
-                    .Replace("<br>", "")
-                    .Replace("<nbsp>", " ")
-                    .Replace("</nbsp>", " ")
-                    .Replace("&ccedil;", "ç")
-                    .Replace("&iuml;", "ï")
-                    );
+                bodyText += base.ParagraphParser(node);
             }
             return bodyText;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public override string DefaultParser(HtmlNode node)
         {
             string bodyText = "";

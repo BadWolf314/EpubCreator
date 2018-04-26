@@ -203,6 +203,10 @@ namespace EpubCreator
         /// <param name="idref">idref to use</param>
         public void AddToSpine(string idref)
         {
+            if (char.IsDigit(idref[0]))
+            {
+                idref = "zz" + idref;
+            }
             package.Spine.Itemref.Add(new Itemref()
             {
                 Idref = idref
@@ -238,7 +242,7 @@ namespace EpubCreator
 
             if(char.IsDigit(item.Id[0]))
             {
-                item.Id = item.Id.Substring(1);
+                item.Id = "zz" + item.Id;
             }
 
             if(!package.Manifest.Item.Exists(x => x.Id == item.Id && x.Href == item.Href && x.Mediatype == item.Mediatype))

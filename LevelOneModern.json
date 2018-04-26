@@ -1,0 +1,64 @@
+{
+   "title": "Level One Modern",
+   "subtitle": "Channel Fireball",
+   "author": "Riley Knight",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\levelonemoderncover.jpg",
+   "pages" : 
+   [
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-grixis-shadow/",
+         "author": "Riley Knight",
+         "title": "Grixis Shadow",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-storm/",
+         "author": "Riley Knight",
+         "title": "Storm",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-u-w-x-control/",
+         "author": "Riley Knight",
+         "title": "U-W-x Control",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-traditional-tron/",
+         "author": "Riley Knight",
+         "title": "Traditional Tron",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-scapeshift/",
+         "author": "Riley Knight",
+         "title": "Scapeshift",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-5-color-humans/",
+         "author": "Riley Knight",
+         "title": "5-Color Humans",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-black-green-rock/",
+         "author": "Riley Knight",
+         "title": "Black-Green Rock",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-1-modern-eldrazi-tron/",
+         "author": "Riley Knight",
+         "title": "Eldrazi Tron",
+         "parser": "CFB"
+      }
+   ],
+   "location": "D:\\Epubs\\LevelOneModern\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

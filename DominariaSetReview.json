@@ -2,6 +2,7 @@
    "title": "Dominaria Set Review",
    "subtitle": "Various",
    "author": "Various",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\dominariasetreviewcover.jpg",
    "pages" : 
    [
       {
@@ -62,6 +63,12 @@
          "url": "https://www.channelfireball.com/articles/an-early-pick-order-list-for-dominaria/",
          "author": "Frank Karsten",
          "title": "An Early Pick Order List for Dominaria",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-white/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - White",
          "parser": "CFB"
       }
    ],

@@ -1,0 +1,22 @@
+{
+   "title": "Limited Tips",
+   "subtitle": "Various",
+   "author": "Various",
+   "cover": "",
+   "pages" : 
+   [
+      {
+         "url": "https://www.channelfireball.com/articles/sideboarding-in-limited/",
+         "author": "Martin Juza",
+         "title": "Sideboarding in Limited",
+         "parser": "CFB"
+      }
+   ],
+   "location": "D:\\Epubs\\LimitedTips\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

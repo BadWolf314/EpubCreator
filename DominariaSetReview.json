@@ -60,9 +60,21 @@
          "parser": "Wizard"
       },
       {
+         "url": "https://magic.wizards.com/en/articles/archive/how-play-limited/dominaria-draft-primer-2018-04-23",
+         "author": "Marshall Sutcliffe",
+         "title": "Dominaria Draft Primer",
+         "parser": "Wizard"
+      },
+      {
          "url": "https://www.channelfireball.com/articles/an-early-pick-order-list-for-dominaria/",
          "author": "Frank Karsten",
          "title": "An Early Pick Order List for Dominaria",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-sealed/",
+         "author": "Mike Sigrist",
+         "title": "Dominaria Sealed",
          "parser": "CFB"
       },
       {
@@ -70,6 +82,24 @@
          "author": "Luis Scott-Vargas",
          "title": "Constructed - White",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-blue/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Blue",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/where-to-start-in-dominaria-standard/",
+         "author": "Reid Duke",
+         "title": "Where to Start in Dominaria Standard",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/how-build/almost-there-mono-white-2018-04-27",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Almost There- Mono-White",
+         "parser": "Wizard"
       }
    ],
    "location": "D:\\Epubs\\DominariaSetReview\\",

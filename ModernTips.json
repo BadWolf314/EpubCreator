@@ -1,0 +1,22 @@
+{
+   "title": "Modern Tips",
+   "subtitle": "Various",
+   "author": "Various",
+   "cover": "",
+   "pages" : 
+   [
+      {
+         "url": "https://www.channelfireball.com/articles/10-more-useful-interactions-every-modern-player-should-know/",
+         "author": "Frank Karsten",
+         "title": "10 More Useful Interactions Every Modern Player Should Know",
+         "parser": "CFB"
+      }
+   ],
+   "location": "D:\\Epubs\\ModernTips\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

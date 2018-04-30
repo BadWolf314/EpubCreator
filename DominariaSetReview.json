@@ -77,6 +77,12 @@
          "title": "Dominaria Sealed",
          "parser": "CFB"
       },
+	  {
+         "url": "https://www.channelfireball.com/articles/everything-ive-learned-about-dominaria-sealed/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Everything I’ve Learned About Dominaria Sealed",
+         "parser": "CFB"
+      },
       {
          "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-white/",
          "author": "Luis Scott-Vargas",
@@ -100,6 +106,12 @@
          "author": "Paulo Vitor Damo da Rosa",
          "title": "Almost There- Mono-White",
          "parser": "Wizard"
+      },
+	  {
+         "url": "https://www.channelfireball.com/articles/three-new-benalish-marshal-decks/",
+         "author": "Riley Knight",
+         "title": "Three New Benalish Marshal Decks",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\DominariaSetReview\\",

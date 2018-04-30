@@ -1,1 +1,1 @@
-for /r %%i in (*.json) do D:\BadWolf314\EpubCreator\EpubCreator\EpubCreator\bin\Debug\EpubCreator.exe --file %%i
+forfiles /m *.json /c "cmd /c D:\BadWolf314\EpubCreator\EpubCreator\EpubCreator\bin\Debug\EpubCreator.exe --file @file"

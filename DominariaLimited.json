@@ -1,8 +1,8 @@
 {
-   "title": "Dominaria Set Review",
+   "title": "Dominaria Limited",
    "subtitle": "Various",
    "author": "Various",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\dominariasetreviewcover.jpg",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\dominarialimitedcover.jpg",
    "pages" : 
    [
       {
@@ -50,7 +50,7 @@
       {
          "url": "https://www.channelfireball.com/articles/top-8-cards-im-excited-about-from-dominaria/",
          "author": "Josh Silvestri",
-         "title": "Top 8 Cards I am Excited About From Dominaria",
+         "title": "Top 8 Cards I’m Excited About From Dominaria",
          "parser": "CFB"
       },
       {
@@ -88,45 +88,9 @@
          "author": "Paulo Vitor Damo da Rosa",
          "title": "Everything I’ve Learned About Dominaria Sealed",
          "parser": "CFB"
-      },
-      {
-         "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-white/",
-         "author": "Luis Scott-Vargas",
-         "title": "Constructed - White",
-         "parser": "CFB"
-      },
-      {
-         "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-blue/",
-         "author": "Luis Scott-Vargas",
-         "title": "Constructed - Blue",
-         "parser": "CFB"
-      },
-      {
-         "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-black/",
-         "author": "Luis Scott-Vargas",
-         "title": "Constructed - Black",
-         "parser": "CFB"
-      },
-      {
-         "url": "https://www.channelfireball.com/articles/where-to-start-in-dominaria-standard/",
-         "author": "Reid Duke",
-         "title": "Where to Start in Dominaria Standard",
-         "parser": "CFB"
-      },
-      {
-         "url": "https://magic.wizards.com/en/articles/archive/how-build/almost-there-mono-white-2018-04-27",
-         "author": "Paulo Vitor Damo da Rosa",
-         "title": "Almost There- Mono-White",
-         "parser": "Wizard"
-      },
-	  {
-         "url": "https://www.channelfireball.com/articles/three-new-benalish-marshal-decks/",
-         "author": "Riley Knight",
-         "title": "Three New Benalish Marshal Decks",
-         "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\DominariaSetReview\\",
+   "location": "D:\\Epubs\\DominariaLimited\\",
    "assets" :
    [
       "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",

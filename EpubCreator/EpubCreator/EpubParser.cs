@@ -54,6 +54,10 @@ namespace EpubCreator
                 {
                     bodyText += ListParser(node);
                 }
+                else if(ScriptNode(node))
+                {
+                    bodyText += ScriptParser(node);
+                }
                 else
                 {
                     bodyText += DefaultParser(node);
@@ -123,6 +127,11 @@ namespace EpubCreator
         public virtual bool ListNode(HtmlNode node)
         {
             return node.Name == "ol" || node.Name == "ul";
+        }
+
+        public virtual bool ScriptNode(HtmlNode node)
+        {
+            return node.Name == "script";
         }
 
         #endregion
@@ -217,6 +226,16 @@ namespace EpubCreator
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
+        public virtual string ScriptParser(HtmlNode node)
+        {
+            return "";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public virtual string ListParser(HtmlNode node)
         {
             string returnText = "";
@@ -280,8 +299,6 @@ namespace EpubCreator
             WebClient webClient = new WebClient();
             try
             {
-                epub.AddToManifest(imgName, EpubStructure.IMAGELOCATION + imgName);
-
                 if (!File.Exists(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgName))
                 {
                     EpubParser.Retry(3, TimeSpan.FromSeconds(60), () =>
@@ -290,6 +307,7 @@ namespace EpubCreator
                         epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgName);
                   });
                 }
+                epub.AddToManifest(imgName, EpubStructure.IMAGELOCATION + imgName);
             }
             catch (Exception ex)
             {

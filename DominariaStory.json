@@ -2,7 +2,7 @@
    "title": "Return to Dominaria",
    "subtitle": "Magic Story",
    "author": "Martha Wells",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\cover.jpg",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\dominariastorycover.jpg",
    "pages": 
    [
       {
@@ -45,6 +45,12 @@
          "url": "https://magic.wizards.com/en/articles/archive/magic-story/return-dominaria-episode-7-2018-04-25",
          "author": "Martha Wells",
          "title": "Episode 7",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/return-dominaria-episode-8-2018-05-02",
+         "author": "Martha Wells",
+         "title": "Episode 8",
          "parser": "Wizard"
       }
    ],

@@ -172,6 +172,17 @@ namespace EpubCreator
             epub.AddToManifest(imgFileName, EpubStructure.IMAGELOCATION + imgFileName);
         }
 
+        public string GetPageTitleNoSpaces(string title)
+        {
+            return title
+                .Replace(" ", "")
+                .Replace(":", "")
+                .Replace("'", "")
+                .Replace("&", "")
+                .Replace("?", "")
+                + ".xhtml";
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -184,11 +195,7 @@ namespace EpubCreator
             EpubParser parser = (EpubParser)Activator.CreateInstance(Type.GetType("EpubCreator." + page.parser + "Parser"));
             string bodyText = parser.Parse(page.url, epub);
 
-            string pageTitleNoSpaces = page.title
-                .Replace(" ", "")
-                .Replace(":", "")
-                .Replace("'", "")
-                + ".xhtml";
+            string pageTitleNoSpaces = GetPageTitleNoSpaces(page.title);
 
             StreamWriter writer = new StreamWriter(File.Create(epub.location + EpubStructure.EPUBLOCATION +
                 EpubStructure.CONTENTLOCATION + pageTitleNoSpaces));
@@ -216,11 +223,7 @@ namespace EpubCreator
             int i = 1; 
             foreach(Page page in epub.pages)
             {
-                string pageTitleNoSpaces = page.title
-                    .Replace(" ", "")
-                    .Replace(":", "")
-                    .Replace("'", "")
-                    + ".xhtml";
+                string pageTitleNoSpaces = GetPageTitleNoSpaces(page.title);
                 bodyText += string.Format(EpubStructure.COMMONTOCITEM, pageTitleNoSpaces.Replace('.', '-'), i, pageTitleNoSpaces, page.title);
                 i++;
             }

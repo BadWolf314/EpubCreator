@@ -1,0 +1,45 @@
+{
+   "title": "Macro-Archetypes",
+   "subtitle": "Channel Fireball",
+   "author": "Paulo Vitor Damo da Rosa",
+   "pages" : 
+   [
+      {
+         "url": "https://www.channelfireball.com/home/pvs-playhouse-aggro/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Aggro",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/home/pvs-playhouse-control/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Control",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/home/pvs-playhouse-aggro-control/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Aggro-Control",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/home/pvs-playhouse-combo/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Combo",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/pvs-playhouse-midrange/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Midrange",
+         "parser": "CFB"
+      }
+   ],
+   "location": "D:\\Epubs\\MacroArchetypes\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

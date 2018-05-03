@@ -1,0 +1,292 @@
+{
+   "title": "Level One",
+   "subtitle": "The Full Course",
+   "author": "Reid Duke",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\levelonecover.jpg",
+   "pages" : 
+   [
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/lo/what-magic-2014-08-11",
+         "author": "Reid Duke",
+         "title": "The Basics: What is Magic?",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/basics-mana-2015-07-06",
+         "author": "Reid Duke",
+         "title": "The Basics: The Basics of Mana",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/basics-card-advantage-2015-07-13",
+         "author": "Reid Duke",
+         "title": "The Basics: The Basics of Card Advantage",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/attacking-and-blocking-2015-07-27",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 1: Attacking and Blocking",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/tempo-2015-07-20",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 1: Tempo",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/tempo-card-advantage-delicate-balance-2014-11-17",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 1: Tempo and Card Advantage: A Delicate Balance",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/linear-strategies-2014-12-29",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 1: Linear Strategies",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/lo/aggro-decks-2014-09-29",
+         "author": "Reid Duke",
+         "title": "Deck Archetypes: Aggro Decks",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/lo/control-decks-2014-10-06",
+         "author": "Reid Duke",
+         "title": "Deck Archetypes: Control Decks",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/lo/midrange-decks-2014-10-27",
+         "author": "Reid Duke",
+         "title": "Deck Archetypes: Midrange Decks",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/board-sweepers-2015-06-22",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Board Sweepers",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/permission-spells-2015-08-17",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Permission Spells",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/creature-lands-2015-09-07",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: 'Creature' Lands",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/lo/symmetric-effects-2014-09-01",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Symmetric Effects",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/lo/threats-and-answers-2014-09-08",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Threats and Answers",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/inevitability-2014-12-08",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Inevitability",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/role-assignment-2015-01-05",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Role Assignment",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/damage-racing-2015-05-04",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Damage Racing",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/mulligans-2015-01-26",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Mulligans",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/sequencing-2015-02-16",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Sequencing",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/play-or-draw-2015-03-16",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 2: Play or Draw",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/investment-2015-03-02",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: Investment",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/line-theory-2015-03-23",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: Line-Up Theory",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/playing-ahead-playing-behind-2015-03-30",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: Playing From Ahead, Playing From Behind",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/going-through-motions-2015-05-11",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: Going Through the Motions",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/mulligans-part-iii-constructed-2015-06-29",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: Mulligans Part III: Constructed",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/playing-safe-and-playing-scared-2015-08-24",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: Playing Safe and Playing Scared",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/when-cast-your-spells-2015-08-31",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: When to Cast Your Spells",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/flexibility-2015-09-14",
+         "author": "Reid Duke",
+         "title": "Concepts of Gameplay - Part 3: Flexibility",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/lo/sealed-deck-2014-09-15",
+         "author": "Reid Duke",
+         "title": "Limited: Sealed Deck",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/basics-booster-draft-2015-08-03",
+         "author": "Reid Duke",
+         "title": "Limited: The Basics of Booster Draft",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/sideboarding-limited-2015-01-12",
+         "author": "Reid Duke",
+         "title": "Limited: Sideboarding in Limited",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/signals-booster-draft-2015-01-19",
+         "author": "Reid Duke",
+         "title": "Limited: Signals in Booster Draft",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/booster-draft-part-3-2015-02-02",
+         "author": "Reid Duke",
+         "title": "Limited: Booster Draft, Part 3",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/draft-walkthrough-2015-02-23",
+         "author": "Reid Duke",
+         "title": "Limited: Draft Walkthrough",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/mulligans-part-ii-limited-2015-06-15",
+         "author": "Reid Duke",
+         "title": "Limited: Mulligans Part II: Limited",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/building-mana-base-2014-11-24",
+         "author": "Reid Duke",
+         "title": "Deck Construction: Building a Mana Base",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/introduction-popular-constructed-formats-2015-04-27",
+         "author": "Reid Duke",
+         "title": "Deck Construction: An Introduction to the Popular Constructed Formats",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/sideboard-2015-08-10",
+         "author": "Reid Duke",
+         "title": "Deck Construction: The Sideboard",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/sideboard-plans-2015-03-09",
+         "author": "Reid Duke",
+         "title": "Deck Construction: Sideboard Plans",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/choosing-your-deck-2015-06-08",
+         "author": "Reid Duke",
+         "title": "Deck Construction: Choosing Your Deck",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/metagame-2015-06-01",
+         "author": "Reid Duke",
+         "title": "Deck Construction: The Metagame",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/playing-grand-prix-part-i-2015-05-18",
+         "author": "Reid Duke",
+         "title": "Other: Playing in a Grand Prix: Part I",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/playing-grand-prix-part-ii-2015-05-26",
+         "author": "Reid Duke",
+         "title": "Other: Playing in a Grand Prix: Part II",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/becoming-better-player-2015-09-28",
+         "author": "Reid Duke",
+         "title": "Other: Becoming a Better Player",
+         "parser": "Wizard"
+      },
+      {
+         "url": "http://magic.wizards.com/en/articles/archive/level-one/glossary-terms-2015-09-21",
+         "author": "Reid Duke",
+         "title": "Glossary of Terms",
+         "parser": "Wizard"
+      }
+   ],
+   "location": "D:\\Epubs\\LevelOne\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

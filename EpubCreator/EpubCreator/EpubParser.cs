@@ -145,17 +145,7 @@ namespace EpubCreator
         /// <returns></returns>
         public virtual string ParagraphParser(HtmlNode node)
         {
-            return string.Format(EpubStructure.COMMONPARAGRAPH, node.InnerText
-                    .Replace("&mdash;", " - ")
-                    .Replace("&ndash;", " - ")
-                    .Replace("&nbsp;", " ")
-                    .Replace("&eacute;", "é")
-                    .Replace("&agrave;", "à")
-                    .Replace("<br>", "")
-                    .Replace("<nbsp>", " ")
-                    .Replace("</nbsp>", " ")
-                    .Replace("&ccedil;", "ç")
-                    .Replace("&iuml;", "ï"));
+            return string.Format(EpubStructure.COMMONPARAGRAPH, Sanitize(node.InnerText));
         }
 
         /// <summary>
@@ -185,17 +175,7 @@ namespace EpubCreator
         /// <returns></returns>
         public virtual string DefaultParser(HtmlNode node)
         {
-            return "\n" + node.OuterHtml
-                     .Replace("&mdash;", " - ")
-                    .Replace("&ndash;", " - ")
-                    .Replace("&nbsp;", " ")
-                    .Replace("&eacute;", "é")
-                    .Replace("&agrave;", "à")
-                    .Replace("<br>", "")
-                    .Replace("<nbsp>", " ")
-                    .Replace("</nbsp>", " ")
-                    .Replace("&ccedil;", "ç")
-                    .Replace("&iuml;", "ï")
+            return "\n" + Sanitize(node.OuterHtml)
                     ;
         }
 
@@ -263,6 +243,13 @@ namespace EpubCreator
                 .Replace("&iuml;", "ï")
                 .Replace("<p>", "")
                 .Replace("</p>", "")
+                .Replace("&AElig;", "Æ")
+                .Replace("&hellip;", "…")
+                .Replace("&rsquo;", "'")
+                .Replace("&alpha;", "ALPHA")
+                .Replace("&beta;", "BETA")
+                .Replace("&omega;", "OMEGA")
+                .Replace("&oacute;", "Ó")
                 ;
         }
 
@@ -445,6 +432,18 @@ namespace EpubCreator
             return bodyText;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public override string DefaultParser(HtmlNode node)
+        {
+            if (node.HasClass("twitter-tweet"))
+                return HrParser(node) + ParagraphParser(node) + HrParser(node);
+            return base.DefaultParser(node);
+        }
+
         #endregion
 
         /// <summary>
@@ -497,6 +496,16 @@ namespace EpubCreator
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
+        public override bool HrNode(HtmlNode node)
+        {
+            return base.HrNode(node) || node.SelectNodes(".//hr") != null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public bool FullImageNode(HtmlNode node)
         {
             return node.HasClass("figure-wrapper");
@@ -506,6 +515,11 @@ namespace EpubCreator
         {
             return node.HasClass("bean_block_deck_list")
                 || node.HasClass("bean--wiz-content-deck-list");
+        }
+
+        public override bool ParagraphNode(HtmlNode node)
+        {
+            return base.ParagraphNode(node) || (node.Name == "blockquote" && node.SelectNodes(".//p") != null);
         }
 
         #endregion
@@ -570,7 +584,7 @@ namespace EpubCreator
                 {
                     imgText += BuildImage(child);
                 }
-                string caption = node.SelectNodes(".//figcaption")[0].InnerText;
+                string caption = Sanitize(node.SelectNodes(".//figcaption")[0].InnerText);
                 bodyText += string.Format(EpubStructure.COMMONFULLIMAGEWITHCAPTIONCONTAINER, imgText, caption);
             }
             else
@@ -589,11 +603,11 @@ namespace EpubCreator
         {
             string bodyText = "";
             bodyText += base.HrParser(node);
-            bodyText += "<h3>" + node.SelectNodes(".//span[contains(@class, 'deck-meta')]//h4").FirstOrDefault().InnerHtml + "</h3>";
+            bodyText += "<h3>" + Sanitize(node.SelectNodes(".//span[contains(@class, 'deck-meta')]//h4").FirstOrDefault().InnerHtml) + "</h3>";
 
             foreach (HtmlNode sortedDiv in node.SelectNodes(".//div[contains(@class, 'sorted-by-overview-container')]//div[contains(@class, 'clearfix')]"))
             {
-                bodyText += "<h4>" + sortedDiv.SelectNodes(".//h5").FirstOrDefault().InnerHtml + "</h4>";
+                bodyText += "<h4>" + Sanitize(sortedDiv.SelectNodes(".//h5").FirstOrDefault().InnerHtml) + "</h4>";
                 foreach (HtmlNode row in sortedDiv.SelectNodes(".//span[contains(@class, 'row')]"))
                 {
                     bodyText += base.ParagraphParser(row);
@@ -619,7 +633,7 @@ namespace EpubCreator
             if (imgName.EndsWith(".ashx"))
             {
                 imgName = imgUrl.Split('?')[imgUrl.Split('?').Length - 1];
-                imgName = imgName.Split('&').Where(x => x.StartsWith("name=")).FirstOrDefault().Replace("%", "").Substring(5) + ".png";
+                imgName = imgName.Split('&').Where(x => x.StartsWith("name=") || x.StartsWith("multiverseid=")).FirstOrDefault().Replace("%", "").Substring(5) + ".png";
             }
             return string.Format(EpubStructure.COMMONIMAGE,
                 SaveImage(epub, imgUrl, imgName), "");

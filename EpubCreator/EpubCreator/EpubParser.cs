@@ -367,7 +367,7 @@ namespace EpubCreator
         {
             RootNode = "//div[contains(@class, 'body-block')]";
         }
-    }
+    } //END OF CLASS
 
 
     /// <summary>
@@ -465,7 +465,7 @@ namespace EpubCreator
                 string.Format(EpubStructure.COMMONIMAGE, SaveImage(epub, imgSrc, imgName), "")
                 );
         }
-    }
+    } //END OF CLASS
 
     /// <summary>
     /// 
@@ -500,6 +500,12 @@ namespace EpubCreator
         public bool FullImageNode(HtmlNode node)
         {
             return node.HasClass("figure-wrapper");
+        }
+
+        public override bool DecklistNode(HtmlNode node)
+        {
+            return node.HasClass("bean_block_deck_list")
+                || node.HasClass("bean--wiz-content-deck-list");
         }
 
         #endregion
@@ -571,6 +577,29 @@ namespace EpubCreator
             {
                 bodyText += string.Format(EpubStructure.COMMONSMALLIMAGECONTAINER, base.ImageParser(node));
             }
+            return bodyText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public override string DecklistParser(HtmlNode node)
+        {
+            string bodyText = "";
+            bodyText += base.HrParser(node);
+            bodyText += "<h3>" + node.SelectNodes(".//span[contains(@class, 'deck-meta')]//h4").FirstOrDefault().InnerHtml + "</h3>";
+
+            foreach (HtmlNode sortedDiv in node.SelectNodes(".//div[contains(@class, 'sorted-by-overview-container')]//div[contains(@class, 'clearfix')]"))
+            {
+                bodyText += "<h4>" + sortedDiv.SelectNodes(".//h5").FirstOrDefault().InnerHtml + "</h4>";
+                foreach (HtmlNode row in sortedDiv.SelectNodes(".//span[contains(@class, 'row')]"))
+                {
+                    bodyText += base.ParagraphParser(row);
+                }
+            }
+            bodyText += base.HrParser(node);
             return bodyText;
         }
 

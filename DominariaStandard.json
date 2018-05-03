@@ -24,6 +24,12 @@
          "parser": "CFB"
       },
       {
+         "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-red/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Red",
+         "parser": "CFB"
+      },
+      {
          "url": "https://www.channelfireball.com/articles/where-to-start-in-dominaria-standard/",
          "author": "Reid Duke",
          "title": "Where to Start in Dominaria Standard",
@@ -45,6 +51,12 @@
          "url": "https://www.channelfireball.com/articles/w-w-in-dominaria-standard/",
          "author": "Josh Silvestri",
          "title": "Mono-White Aggro in Dominaria Standard",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/processing-the-results-from-scg-atlanta/",
+         "author": "Reid Duke",
+         "title": "Processing the Results from SCG Atlanta",
          "parser": "CFB"
       }
    ],

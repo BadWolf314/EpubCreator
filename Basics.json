@@ -1,0 +1,21 @@
+{
+   "title": "To Play The Game Better",
+   "subtitle": "Star City Games",
+   "author": "Various",
+   "pages" : 
+   [
+      {
+         "url": "http://www.starcitygames.com/articles/37054_Keeping-Watch-On-SCG-Baltimores-Larger-Trends.html",
+         "author": "Emma Handy",
+         "title": "Keeping Watch On SCG Baltimore's Larger Trends",
+         "parser": "SCG"
+      }
+   ],
+   "location": "D:\\Epubs\\Testing\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

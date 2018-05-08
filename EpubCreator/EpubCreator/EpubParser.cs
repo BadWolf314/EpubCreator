@@ -356,6 +356,16 @@ namespace EpubCreator
         }
     } //END OF CLASS
 
+    /// <summary>
+    /// 
+    /// </summary>
+    public class SCGParser : EpubParser
+    {
+        public SCGParser()
+        {
+            RootNode = "//*[@id='article_content']";
+        }
+    } //END OF CLASS
 
     /// <summary>
     /// 

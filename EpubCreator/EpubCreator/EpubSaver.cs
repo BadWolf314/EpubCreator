@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Xml.Serialization;
@@ -8,7 +9,9 @@ namespace EpubCreator
 {
     class EpubSaver
     {
-        public const string  EXTENSION = ".epub";
+        public const string EPUBEXTENSION = ".epub";
+        public const string MOBIEXTENSION = ".mobi";
+        public const string CONVERTER = @"D:\BadWolf314\EpubCreator\CalibrePortable\Calibre\ebook-convert.exe";
         public Epub epub;
 
         /// <summary>
@@ -25,7 +28,29 @@ namespace EpubCreator
         public void CreateEpubFile()
         {
             Logger.LogInfo("CreateEpubFile");
-            ZipFile.CreateFromDirectory(epub.location + EpubStructure.EPUBLOCATION, epub.location + epub.title.Replace(" ", "") + EXTENSION);
+            ZipFile.CreateFromDirectory(epub.location + EpubStructure.EPUBLOCATION, epub.location + epub.title.Replace(" ", "") + EPUBEXTENSION);
+        }
+
+        public void CreateMobiFile()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.CreateNoWindow = false;
+            startInfo.UseShellExecute = false;
+            startInfo.FileName = CONVERTER;
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.Arguments = epub.location + epub.title.Replace(" ", "") + EPUBEXTENSION + " " + epub.location + epub.title.Replace(" ", "") + MOBIEXTENSION;
+            try
+            {
+                using (Process exeProcess = Process.Start(startInfo))
+                {
+                    exeProcess.WaitForExit();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Unable to create .MOBI: " + ex.Message);
+                throw new Exception("Unable to create .MOBI", ex);
+            }
         }
 
         /// <summary>

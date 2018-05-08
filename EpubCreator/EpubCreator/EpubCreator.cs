@@ -37,6 +37,7 @@ namespace EpubCreator
 
         Epub epub = new Epub();
         EpubSaver saver;
+        bool mobi = false;
 
         /// <summary>
         /// Constructor: Sets up the logging info
@@ -66,6 +67,10 @@ namespace EpubCreator
                     case "-f":
                         i++;
                         GetEpubInfoFromFile(args[i]);
+                        break;
+                    case "-m":
+                    case "--mobi":
+                        mobi = true;
                         break;
                     default:
                         throw new Exception("Unknown Parameter: " + args[i]);
@@ -109,6 +114,10 @@ namespace EpubCreator
         public void SaveEpub()
         {
             saver.CreateEpubFile();
+            if (mobi)
+            {
+                saver.CreateMobiFile();
+            }
         }
     }
 }

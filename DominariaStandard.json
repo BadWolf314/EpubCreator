@@ -30,6 +30,12 @@
          "parser": "CFB"
       },
       {
+         "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-green/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Green",
+         "parser": "CFB"
+      },
+      {
          "url": "https://www.channelfireball.com/articles/where-to-start-in-dominaria-standard/",
          "author": "Reid Duke",
          "title": "Where to Start in Dominaria Standard",
@@ -57,6 +63,30 @@
          "url": "https://www.channelfireball.com/articles/processing-the-results-from-scg-atlanta/",
          "author": "Reid Duke",
          "title": "Processing the Results from SCG Atlanta",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/a-first-look-at-blue-white-control-in-standard/",
+         "author": "Gabriel Nassif",
+         "title": "A First Look at Blue - White Control in Standard",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/building-knights-in-standard-and-brawl/",
+         "author": "Riley Knight",
+         "title": "Building Knights in Standard and Brawl",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/red-and-wizards-in-dominaria/",
+         "author": "Josh Silvestri",
+         "title": "Red and Wizards in Dominaria",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/five-takeaways-from-the-first-two-weeks-of-standard/",
+         "author": "Josh Silvestri",
+         "title": "Five Takeaways From the First Two Weeks of Standard",
          "parser": "CFB"
       }
    ],

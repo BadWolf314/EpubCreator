@@ -174,7 +174,7 @@ namespace EpubCreator
     }
 
     /// <summary>
-    /// 
+    /// Epub class structure (inputs from JSON format)
     /// </summary>
     public class Epub
     {
@@ -198,21 +198,33 @@ namespace EpubCreator
         #region Helper Functions
 
         /// <summary>
+        /// Sanatize the id
+        /// </summary>
+        /// <param name="id">id with potentially bad characters</param>
+        /// <returns>sanatized id</returns>
+        private string SanitizeId(string id)
+        {
+            if (char.IsDigit(id[0]))
+            {
+                id = "zz" + id;
+            }
+            return id
+                .Replace('.', '-')
+                .Replace(',', '-')
+                .Replace('+', '-')
+                ;
+        }
+
+
+        /// <summary>
         /// Add an object to the spine
         /// </summary>
         /// <param name="idref">idref to use</param>
         public void AddToSpine(string idref)
         {
-            if (char.IsDigit(idref[0]))
-            {
-                idref = "zz" + idref;
-            }
             package.Spine.Itemref.Add(new Itemref()
             {
-                Idref = idref
-                    .Replace('.', '-')
-                    .Replace(',', '-')
-                    .Replace('+', '-')
+                Idref = SanitizeId(idref)
             });
             toc.Add(idref);
         }
@@ -226,11 +238,7 @@ namespace EpubCreator
         {
             Item item = new Item()
             {
-                Id = id
-                    .Replace('.', '-')
-                    .Replace(',', '-')
-                    .Replace('+', '-')
-                    ,
+                Id = SanitizeId(id),
                 Href = href.Replace("\\", "/"),
                 Mediatype = EpubStructure.GetMediaType(id)
             };
@@ -238,11 +246,6 @@ namespace EpubCreator
             if(!string.IsNullOrEmpty(properties))
             {
                 item.Properties = properties;
-            }
-
-            if(char.IsDigit(item.Id[0]))
-            {
-                item.Id = "zz" + item.Id;
             }
 
             if(!package.Manifest.Item.Exists(x => x.Id == item.Id && x.Href == item.Href && x.Mediatype == item.Mediatype))

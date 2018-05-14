@@ -11,11 +11,11 @@ namespace EpubCreator
     {
         public const string EPUBEXTENSION = ".epub";
         public const string MOBIEXTENSION = ".mobi";
-        public const string CONVERTER = @"D:\BadWolf314\EpubCreator\CalibrePortable\Calibre\ebook-convert.exe";
+        public const string CONVERTER = @"D:\BadWolf314\EpubCreator\Calibre Portable\Calibre\ebook-convert.exe";
         public Epub epub;
 
         /// <summary>
-        /// 
+        /// Constructor: Setup the epub
         /// </summary>
         public EpubSaver(Epub epub)
         {
@@ -23,7 +23,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create the Epub Zip Fiel
         /// </summary>
         public void CreateEpubFile()
         {
@@ -31,6 +31,10 @@ namespace EpubCreator
             ZipFile.CreateFromDirectory(epub.location + EpubStructure.EPUBLOCATION, epub.location + epub.title.Replace(" ", "") + EPUBEXTENSION);
         }
 
+        /// <summary>
+        /// Create the MOBI file
+        ///       we use the Calibre command line program
+        /// </summary>
         public void CreateMobiFile()
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -54,7 +58,9 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Populate the Epub Structure
+        /// Create all the Folders 
+        /// And Create all the assests
         /// </summary>
         public void PopulateStructure()
         {
@@ -93,7 +99,8 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Clean up the old structure
+        /// We dont' care if this fails we'll just overwrite everything
         /// </summary>
         public void CleanUpOldStructure()
         {
@@ -111,7 +118,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Make all the directories
         /// </summary>
         public void CreateDirectories()
         {
@@ -125,7 +132,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create the Container file and the mimetype file
         /// </summary>
         public void CreateContainerAndMimetype()
         {
@@ -142,7 +149,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create the cover if we need to 
         /// </summary>
         public void CreateCover()
         {
@@ -160,7 +167,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create the title page
         /// </summary>
         public void CreateTitlePage()
         {
@@ -174,7 +181,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create and add a css asset
         /// </summary>
         /// <param name="css"></param>
         public void CreateCSS(string css)
@@ -186,7 +193,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create and add an image asset
         /// </summary>
         /// <param name="img"></param>
         public void CreateImage(string img)
@@ -197,6 +204,11 @@ namespace EpubCreator
             epub.AddToManifest(imgFileName, EpubStructure.IMAGELOCATION + imgFileName);
         }
 
+        /// <summary>
+        /// Get the title name that we can use to save the file to and in the xhtml file
+        /// </summary>
+        /// <param name="title">Full title name</param>
+        /// <returns>sanitized file name</returns>
         public string GetPageTitleNoSpaces(string title)
         {
             return title
@@ -209,9 +221,11 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create the page
+        /// Parse throught the website using the specified parser
+        /// Save it tot he file structure and add it to the manifest and spine
         /// </summary>
-        /// <param name="page"></param>
+        /// <param name="page">Page to Parse</param>
         public void CreatePage(Page page)
         {
             Logger.LogInfo("CreatePage");
@@ -236,7 +250,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create the table of contents using the given page structure in the json
         /// </summary>
         public void CreateTOC()
         {
@@ -265,7 +279,7 @@ namespace EpubCreator
         #region Package
 
         /// <summary>
-        /// 
+        /// Create the package manifest
         /// </summary>
         public void CreatePackageManifest()
         {
@@ -280,7 +294,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        /// Create the Package
         /// </summary>
         public void CreatePackage()
         {

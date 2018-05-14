@@ -8,7 +8,7 @@ using System.Threading;
 namespace EpubCreator
 {
     /// <summary>
-    /// 
+    /// Basic Parser class
     /// </summary>
     public abstract class EpubParser
     {

@@ -6,6 +6,11 @@ namespace EpubCreator
 {
     class EpubCreator
     {
+        /// <summary>
+        /// Main Program
+        /// Parse args and then try to create Epub
+        /// </summary>
+        /// <param name="args">parameters</param>
         static void Main(string[] args)
         {
             EpubCreator creator = new EpubCreator();
@@ -110,6 +115,7 @@ namespace EpubCreator
 
         /// <summary>
         /// Save the Epub into the proper file (.epub format)
+        /// If mobi is specified save that file too
         /// </summary>
         public void SaveEpub()
         {

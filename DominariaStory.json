@@ -52,6 +52,18 @@
          "author": "Martha Wells",
          "title": "Episode 8",
          "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/return-dominaria-episode-9-2018-05-09",
+         "author": "Martha Wells",
+         "title": "Episode 9",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/return-dominaria-episode-10-2018-05-16",
+         "author": "Martha Wells",
+         "title": "Episode 10",
+         "parser": "Wizard"
       }
    ],
    "location": "D:\\Epubs\\ReturnToDominaria\\",

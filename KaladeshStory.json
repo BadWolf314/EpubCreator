@@ -1,0 +1,124 @@
+{
+   "title": "Kaladesh",
+   "subtitle": "Magic Story",
+   "author": "R and D Narrative Team",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\kaladeshstorycover.jpg",
+   "pages": 
+   [
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/homesick-2016-08-29",
+         "author": "Chris L'Etoile",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/time-innovation-2016-08-31",
+         "author": "Kimberly J. Kreines",
+         "title": "A TIME FOR INNOVATION",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/torch-defiance-2016-09-07",
+         "author": "Doug Beyer",
+         "title": "TORCH OF DEFIANCE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/renegade-prime-2016-09-14",
+         "author": "Mel Li",
+         "title": "RENEGADE PRIME",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/born-aether-2016-09-21",
+         "author": "Alison Luhrs",
+         "title": "BORN OF AETHER",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/bottled-2016-09-28",
+         "author": "James Wyatt",
+         "title": "BOTTLED UP",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/release-2016-10-05",
+         "author": "Chris L'Etoile",
+         "title": "RELEASE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/very-arena-2016-10-12",
+         "author": "Doug Beyer",
+         "title": "IN THIS VERY ARENA",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/grateful-consulate-2016-10-19",
+         "author": "James Wyatt",
+         "title": "A GRATEFUL CONSULATE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/dead-night-2016-11-30",
+         "author": "Alison Luhrs",
+         "title": "IN THE DEAD OF NIGHT",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/quiet-moments-2016-12-07",
+         "author": "Michael Yichao",
+         "title": "QUIET MOMENTS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/breakthrough-2016-12-14",
+         "author": "Kimberly J. Kreines",
+         "title": "BREAKTHROUGH",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/revolution-begins-2017-01-02",
+         "author": "Nik Davidson, Kelly Digges, and Kimberly J. Kreines",
+         "title": "REVOLUTION BEGINS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/burn-2017-01-04",
+         "author": "Chris L'Etoile",
+         "title": "BURN",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/skies-over-ghirapur-2017-01-11",
+         "author": "Ari Levitch",
+         "title": "THE SKIES OVER GHIRAPUR",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/breaking-points-2017-01-18",
+         "author": "Doug Beyer",
+         "title": "BREAKING POINTS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/puppets-2017-01-25",
+         "author": "James Wyatt",
+         "title": "PUPPETS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/renewal-2017-02-01",
+         "author": "Magic Creative Team",
+         "title": "RENEWAL",
+         "parser": "Wizard"
+      }
+   ],
+   "location": "D:\\Epubs\\KaladeshStory\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

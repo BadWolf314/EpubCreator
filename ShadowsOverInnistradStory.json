@@ -1,0 +1,136 @@
+{
+   "title": "Shadows Over Innistrad",
+   "subtitle": "Magic Story",
+   "author": "R and D Narrative Team",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\soistorycover.jpg",
+   "pages": 
+   [
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/under-silver-moon-2016-03-02",
+         "author": "Kimberly J. Kreines",
+         "title": "UNDER THE SILVER MOON",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/gaze-blank-and-pitiless-2016-03-09",
+         "author": "Ken Troop",
+         "title": "A GAZE BLANK AND PITILESS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/unwelcome-2016-03-16",
+         "author": "Kelly Digges",
+         "title": "UNWELCOME",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/sacrifice-2016-03-23",
+         "author": "Michael Yichao",
+         "title": "SACRIFICE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/mystery-markov-manor-2016-03-30",
+         "author": "James Wyatt",
+         "title": "THE MYSTERY OF MARKOV MANOR",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/drownyard-temple-2016-04-06",
+         "author": "Mel Li",
+         "title": "THE DROWNYARD TEMPLE",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/promises-old-and-new-2016-04-13",
+         "author": "Ari Levitch",
+         "title": "PROMISES OLD AND NEW",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/lilianas-indignation-2016-04-20",
+         "author": "Kelly Digges",
+         "title": "LILIANA'S INDIGNATION",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/games-2016-04-27",
+         "author": "Alison Luhrs",
+         "title": "GAMES",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/lunarch-inquisition-2016-05-04",
+         "author": "James Wyatt",
+         "title": "THE LUNARCH INQUISITION",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/stories-and-endings-2016-05-11",
+         "author": "Nik Davidson",
+         "title": "STORIES AND ENDINGS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/i-am-avacyn-2016-05-18",
+         "author": "Doug Beyer",
+         "title": "I AM AVACYN",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https",
+         "author": "Chris",
+         "title": "HOMESICK",
+         "parser": "Wizard"
+      }
+   ],
+   "location": "D:\\Epubs\\SOIStory\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

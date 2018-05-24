@@ -547,7 +547,7 @@ namespace EpubCreator
             if (node.Attributes["align"] != null && node.Attributes["align"].Value == "center")
             {
                 bodyText += string.Format(EpubStructure.COMMONCHAPTERNUMBER,
-                    node.InnerText.Substring(0, node.InnerText.Length - 1).ToUpper());
+                    Sanitize(node.InnerText).ToUpper());
             }
             else if (!node.InnerHtml.Contains("target=\"_blank\""))
             {

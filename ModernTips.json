@@ -28,6 +28,12 @@
          "author": "Frank Karsten",
          "title": "How Many Copies of Any Given Card Should You Put in Your Deck?",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/affinity-with-dominaria/",
+         "author": "Frank Karsten",
+         "title": "Affinity with Dominaria",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\ModernTips\\",

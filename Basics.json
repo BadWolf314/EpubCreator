@@ -1,17 +1,23 @@
 {
-   "title": "To Play The Game Better",
-   "subtitle": "Star City Games",
+   "title": "Basics",
+   "subtitle": "Various",
    "author": "Various",
    "pages" : 
    [
       {
-         "url": "http://www.starcitygames.com/articles/37054_Keeping-Watch-On-SCG-Baltimores-Larger-Trends.html",
-         "author": "Emma Handy",
-         "title": "Keeping Watch On SCG Baltimore's Larger Trends",
-         "parser": "SCG"
+         "url": "https://www.channelfireball.com/articles/forced-plays/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Forced Plays",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/what-did-happen-and-what-could-happen/",
+         "author": "Reid Duke",
+         "title": "What Did Happen and What Could Happen",
+         "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\Testing\\",
+   "location": "D:\\Epubs\\Bascis\\",
    "assets" :
    [
       "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",

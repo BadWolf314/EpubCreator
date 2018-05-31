@@ -83,10 +83,16 @@
          "title": "Dominaria Sealed",
          "parser": "CFB"
       },
-	  {
+	   {
          "url": "https://www.channelfireball.com/articles/everything-ive-learned-about-dominaria-sealed/",
          "author": "Paulo Vitor Damo da Rosa",
          "title": "Everything I’ve Learned About Dominaria Sealed",
+         "parser": "CFB"
+      },
+	   {
+         "url": "https://www.channelfireball.com/articles/what-makes-dominaria-a-great-limited-format/",
+         "author": "Mike Sigrist",
+         "title": "What Makes Dominaria a Great Limited Format?",
          "parser": "CFB"
       }
    ],

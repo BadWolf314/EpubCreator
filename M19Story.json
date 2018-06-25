@@ -1,0 +1,28 @@
+{
+   "title": "Core Set 19",
+   "subtitle": "Magic Story",
+   "author": "Kate Elliott",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\core19story.jpg",
+   "pages": 
+   [
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/chronicle-bolas-twins-2018-06-13",
+         "author": "Kate Elliott",
+         "title": "CHRONICLE OF BOLAS: THE TWINS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/chronicle-bolas-first-lesson-2018-06-20",
+         "author": "Kate Elliott",
+         "title": "CHRONICLE OF BOLAS: THE FIRST LESSON",
+         "parser": "Wizard"
+      }
+   ],
+   "location": "D:\\Epubs\\CoreSet19\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

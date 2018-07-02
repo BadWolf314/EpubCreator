@@ -16,6 +16,24 @@
          "author": "Kate Elliott",
          "title": "CHRONICLE OF BOLAS: THE FIRST LESSON",
          "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/chronicle-bolas-things-unseen-2018-06-27",
+         "author": "Kate Elliott",
+         "title": "CHRONICLE OF BOLAS: THINGS UNSEEN",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/chronicle-bolas-whispers-treachery-2018-07-11",
+         "author": "Kate Elliott",
+         "title": "CHRONICLE OF BOLAS: WHISPERS OF TREACHERY",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/magic-story/chronicles-bolas-blood-and-fire-2018-07-18",
+         "author": "Kate Elliott",
+         "title": "CHRONICLES OF BOLAS: BLOOD AND FIRE",
+         "parser": "Wizard"
       }
    ],
    "location": "D:\\Epubs\\CoreSet19\\",

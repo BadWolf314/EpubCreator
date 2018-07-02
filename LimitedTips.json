@@ -10,6 +10,12 @@
          "author": "Martin Juza",
          "title": "Sideboarding in Limited",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/how-to-analyze-a-new-limited-format/",
+         "author": "Ben Stark",
+         "title": "How to Analyze a New Limited Format",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\LimitedTips\\",

@@ -1,0 +1,64 @@
+{
+   "title": "Core 2019 Constructed",
+   "subtitle": "Various",
+   "author": "Various",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\core19story.jpg",
+   "pages" : 
+   [
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-white/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - White",
+         "parser": "CFB"
+      },
+            {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-blue/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Blue",
+         "parser": "CFB"
+      },
+            {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-black/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Black",
+         "parser": "CFB"
+      },
+            {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-red/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Red",
+         "parser": "CFB"
+      },
+            {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-green/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Green",
+         "parser": "CFB"
+      },
+            {
+         "url": "https://www.channelfireball.com/articles/week-1-of-core-set-2019-standard/",
+         "author": "Josh Silvestri",
+         "title": "Week 1 of Core Set 2019 Standard",
+         "parser": "CFB"
+      },
+            {
+         "url": "https://www.channelfireball.com/articles/the-best-deck-for-this-weekend-mono-green-stompy/",
+         "author": "Andrea Mengucci",
+         "title": "The Best Deck for this Weekend: Mono-Green Stompy",
+         "parser": "CFB"
+      },
+            {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-is-having-a-much-bigger-impact-on-standard-than-we-expected/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "Core Set 2019 Is Having a Much Bigger Impact on Standard than We Expected",
+         "parser": "CFB"
+      }
+   ],
+   "location": "D:\\Epubs\\Core19Constructed\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

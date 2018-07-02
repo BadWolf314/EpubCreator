@@ -1,0 +1,106 @@
+{
+   "title": "Core 2019 Limited",
+   "subtitle": "Various",
+   "author": "Various",
+   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\core19story.jpg",
+   "pages" : 
+   [
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-limited-set-review-white/",
+         "author": "Luis Scott-Vargas",
+         "title": "Limited - White",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-limited-set-review-blue/",
+         "author": "Luis Scott-Vargas",
+         "title": "Limited - Blue",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-limited-set-review-black/",
+         "author": "Luis Scott-Vargas",
+         "title": "Limited - Black",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-limited-set-review-red/",
+         "author": "Luis Scott-Vargas",
+         "title": "Limited - Red",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-limited-set-review-green/",
+         "author": "Luis Scott-Vargas",
+         "title": "Limited - Green",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-limited-set-review-gold-artifacts-and-lands/",
+         "author": "Luis Scott-Vargas",
+         "title": "Limited - Gold, Artifacts, and Lands",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/how-to-draft-blue-white-flyers-in-dominaria/",
+         "author": "Ben Stark",
+         "title": "How to Draft Blue-White Flyers in Dominaria",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/the-core-set-2019-prerelease-primer/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "The Core Set 2019 Prerelease Primer",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://magic.wizards.com/en/articles/archive/how-play-limited/core-set-2019-first-picks-2018-07-10",
+         "author": "Luis Scott-Vargas",
+         "title": "CORE SET 2019 FIRST PICKS",
+         "parser": "Wizard"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/an-early-pick-order-list-for-core-set-2019/",
+         "author": "Frank Karsten",
+         "title": "An Early Pick Order List for Core Set 2019",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/drafting-core-set-2019-with-siggy/",
+         "author": "Mike Sigrist",
+         "title": "Drafting Core Set 2019 with Siggy",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-archetype-primer-w-u-artifacts-w-b-life-gain-w-r-go-wide-and-w-g-auras/",
+         "author": "Joel Larsson",
+         "title": "Core Set 2019 Archetype Primer: WU Artifacts, WB Life Gain, WR Go Wide, and WG Auras",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-limited-archetypes-primer-u-b-control-r-b-sacrifice-u-g-ramp-and-u-r-spells/",
+         "author": "Joel Larsson",
+         "title": "Core Set 2019 Limited Archetypes Primer: U/B Control, R/B Sacrifice, U/G Ramp, and U/R Spells",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-archetypes-primer-finale-b-g-stuff-r-g-ramp-u-x-mill/",
+         "author": "Joel Larsson",
+         "title": "Core Set 2019 Archetypes Primer Finale: B/G Stuff, R/G Ramp, U/x Mill",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/practicing-sealed-deck-with-core-set-2019/",
+         "author": "Andrea Mengucci",
+         "title": "Practicing Sealed Deck with Core Set 2019",
+         "parser": "CFB"
+      }
+   ],
+   "location": "D:\\Epubs\\Core19Limited\\",
+   "assets" :
+   [
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
+      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+   ]
+}

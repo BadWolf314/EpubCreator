@@ -52,6 +52,18 @@
          "author": "Riley Knight",
          "title": "Eldrazi Tron",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-one-modern-burn/",
+         "author": "Riley Knight",
+         "title": "Burn",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-one-modern-hollow-one/",
+         "author": "Riley Knight",
+         "title": "Hollow One",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\LevelOneModern\\",

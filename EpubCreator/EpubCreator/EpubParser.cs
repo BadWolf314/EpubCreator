@@ -288,7 +288,7 @@ namespace EpubCreator
             {
                 if (!File.Exists(epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgName))
                 {
-                    EpubParser.Retry(3, TimeSpan.FromSeconds(60), () =>
+                    EpubParser.Retry(1, TimeSpan.FromSeconds(60), () =>
                   {
                       webClient.DownloadFile(url,
                         epub.location + EpubStructure.EPUBLOCATION + EpubStructure.CONTENTLOCATION + EpubStructure.IMAGELOCATION + imgName);

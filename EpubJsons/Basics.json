@@ -15,6 +15,24 @@
          "author": "Reid Duke",
          "title": "What Did Happen and What Could Happen",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/3-tips-to-mulligan-smarter/",
+         "author": "Paulo Vitor Damo da Rosa",
+         "title": "3 Tips to Mulligan Smarter",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/understanding-standings-part-i-tournament-structure-the-basics/",
+         "author": "Reid Duke",
+         "title": "Understanding Standings, Part I: Tournament Structure (The Basics)",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/standings-part-ii-reading-the-standings-advanced/",
+         "author": "Reid Duke",
+         "title": "Understanding Standings, Part II: Reading the Standings (Advanced)",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\Bascis\\",

@@ -64,6 +64,24 @@
          "author": "Riley Knight",
          "title": "Hollow One",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-one-modern-mardu-pyromancer/",
+         "author": "Riley Knight",
+         "title": "Mardu Pyromancer",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-one-modern-bogles/",
+         "author": "Riley Knight",
+         "title": "Bogles",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-one-modern-dredge/",
+         "author": "Riley Knight",
+         "title": "Dredge",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\LevelOneModern\\",

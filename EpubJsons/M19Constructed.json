@@ -17,40 +17,76 @@
          "title": "Constructed - Blue",
          "parser": "CFB"
       },
-            {
+      {
          "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-black/",
          "author": "Luis Scott-Vargas",
          "title": "Constructed - Black",
          "parser": "CFB"
       },
-            {
+      {
          "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-red/",
          "author": "Luis Scott-Vargas",
          "title": "Constructed - Red",
          "parser": "CFB"
       },
-            {
+      {
          "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-green/",
          "author": "Luis Scott-Vargas",
          "title": "Constructed - Green",
          "parser": "CFB"
       },
-            {
+      {
+         "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-gold-artifacts-lands-and-top-5-cards/",
+         "author": "Luis Scott-Vargas",
+         "title": "Constructed - Gold, Artifacts, Lands, and Top 5 Cards",
+         "parser": "CFB"
+      },
+      {
          "url": "https://www.channelfireball.com/articles/week-1-of-core-set-2019-standard/",
          "author": "Josh Silvestri",
          "title": "Week 1 of Core Set 2019 Standard",
          "parser": "CFB"
       },
-            {
+      {
          "url": "https://www.channelfireball.com/articles/the-best-deck-for-this-weekend-mono-green-stompy/",
          "author": "Andrea Mengucci",
          "title": "The Best Deck for this Weekend: Mono-Green Stompy",
          "parser": "CFB"
       },
-            {
+      {
          "url": "https://www.channelfireball.com/articles/core-set-2019-is-having-a-much-bigger-impact-on-standard-than-we-expected/",
          "author": "Paulo Vitor Damo da Rosa",
          "title": "Core Set 2019 Is Having a Much Bigger Impact on Standard than We Expected",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/standard-to-zombie-or-not-to-zombie/",
+         "author": "Brian DeMars",
+         "title": "Standard: To Zombie or Not to Zombie",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/the-standard-metagame-is-a-circle/",
+         "author": "Andrea Mengucci",
+         "title": "The Standard Metagame is a Circle",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/standard-lessons-and-the-top-8-decklists-from-dutch-nationals/",
+         "author": "Frank Karsten",
+         "title": "Standard Lessons and the Top 8 Deck Lists From Dutch Nationals",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/nicol-bolas-ravages-standard/",
+         "author": "Josh Silvestri",
+         "title": "Nicol Bolas Ravages Standard",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/mono-blue-storm-in-standard/",
+         "author": "Daan Pruijt",
+         "title": "Mono-Blue Storm in Standard",
          "parser": "CFB"
       }
    ],

@@ -16,6 +16,18 @@
          "author": "Ben Stark",
          "title": "How to Analyze a New Limited Format",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/improve-your-limited-game-with-quadrant-theory/",
+         "author": "Luis Scott-Vargas",
+         "title": "Improve Your Limited Game with Quadrant Theory",
+         "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/play-to-win-the-game-not-the-turn/",
+         "author": "Brian DeMars",
+         "title": "Play to Win the Game, Not the Turn",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\LimitedTips\\",

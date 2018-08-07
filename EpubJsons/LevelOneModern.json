@@ -82,6 +82,12 @@
          "author": "Riley Knight",
          "title": "Dredge",
          "parser": "CFB"
+      },
+      {
+         "url": "https://www.channelfireball.com/articles/level-one-modern-infect/",
+         "author": "Riley Knight",
+         "title": "Infect",
+         "parser": "CFB"
       }
    ],
    "location": "D:\\Epubs\\LevelOneModern\\",

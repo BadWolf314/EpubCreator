@@ -348,17 +348,6 @@ namespace EpubCreator
     /// <summary>
     /// 
     /// </summary>
-    public class GCParser : EpubParser
-    {
-        public GCParser()
-        {
-            RootNode = "//div[contains(@class, 'body-block')]";
-        }
-    } //END OF CLASS
-
-    /// <summary>
-    /// 
-    /// </summary>
     public class SCGParser : EpubParser
     {
         public SCGParser()

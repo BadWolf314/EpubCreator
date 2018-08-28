@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -11,7 +11,7 @@ namespace EpubCreator
     {
         public const string EPUBEXTENSION = ".epub";
         public const string MOBIEXTENSION = ".mobi";
-        public const string CONVERTER = @"D:\BadWolf314\EpubCreator\Calibre Portable\Calibre\ebook-convert.exe";
+        public readonly string CONVERTER = @"..\..\..\..\Calibre Portable\Calibre\ebook-convert.exe";
         public Epub epub;
 
         /// <summary>

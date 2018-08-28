@@ -2,8 +2,8 @@
    "title": "Dominaria Limited",
    "subtitle": "Various",
    "author": "Various",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\dominarialimitedcover.jpg",
-   "pages" : 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\dominarialimitedcover.jpg",
+   "pages" :
    [
       {
          "url": "https://magic.wizards.com/en/articles/archive/how-play-limited/dominating-dominaria-limited-2018-04-17",
@@ -96,11 +96,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\DominariaLimited\\",
+   "location": "out\\Epubs\\DominariaLimited\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

@@ -2,8 +2,8 @@
    "title": "Dominaria Standard",
    "subtitle": "Various",
    "author": "Various",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\dominariastandardcover.jpg",
-   "pages" : 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\dominariastandardcover.jpg",
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/articles/dominaria-constructed-set-review-white/",
@@ -98,7 +98,7 @@
       {
          "url": "https://www.channelfireball.com/articles/standard-mogg-pharaohs-gift/",
          "author": "Brian DeMars",
-         "title": "Standard: Mogg Pharaoh’s Gift",
+         "title": "Standard: Mogg Pharaohï¿½s Gift",
          "parser": "CFB"
       },
       {
@@ -108,11 +108,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\DominariaStandard\\",
+   "location": "out\\Epubs\\DominariaStandard\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

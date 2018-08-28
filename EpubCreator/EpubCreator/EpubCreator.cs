@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 
@@ -42,7 +42,7 @@ namespace EpubCreator
 
         Epub epub = new Epub();
         EpubSaver saver;
-        bool mobi = false;
+        bool mobi;
 
         /// <summary>
         /// Constructor: Sets up the logging info

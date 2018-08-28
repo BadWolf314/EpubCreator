@@ -3,7 +3,7 @@
    "subtitle": "Various",
    "author": "Various",
    "cover": "",
-   "pages" : 
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/articles/sideboarding-in-limited/",
@@ -30,11 +30,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\LimitedTips\\",
+   "location": "out\\Epubs\\LimitedTips\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

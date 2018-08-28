@@ -2,8 +2,8 @@
    "title": "Core 2019 Constructed",
    "subtitle": "Various",
    "author": "Various",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\core19story.jpg",
-   "pages" : 
+   "cover": "..\\EpubCreator\\SupportingFiles\\core19story.jpg",
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/articles/core-set-2019-constructed-set-review-white/",
@@ -90,11 +90,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\Core19Constructed\\",
+   "location": "out\\Epubs\\Core19Constructed\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

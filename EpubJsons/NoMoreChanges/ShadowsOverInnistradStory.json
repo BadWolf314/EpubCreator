@@ -2,8 +2,8 @@
    "title": "Shadows Over Innistrad",
    "subtitle": "Magic Story",
    "author": "R and D Narrative Team",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\soistorycover.jpg",
-   "pages": 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\soistorycover.jpg",
+   "pages":
    [
       {
          "url": "https://magic.wizards.com/en/articles/archive/magic-story/under-silver-moon-2016-03-02",
@@ -126,11 +126,11 @@
          "parser": "Wizard"
       }
    ],
-   "location": "D:\\Epubs\\SOIStory\\",
+   "location": "out\\Epubs\\SOIStory\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

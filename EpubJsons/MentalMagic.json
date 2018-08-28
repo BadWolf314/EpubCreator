@@ -2,8 +2,8 @@
    "title": "Mental Mana",
    "subtitle": "Channel Fireball",
    "author": "Will Jonathan",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\mentalmanacover.jpg",
-   "pages" : 
+   "cover": "..\\EpubCreator\\SupportingFiles\\mentalmanacover.jpg",
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/articles/5-ways-to-become-the-most-confident-player-you-can-be/",
@@ -294,11 +294,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\MentalMagic\\",
+   "location": "out\\Epubs\\MentalMagic\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

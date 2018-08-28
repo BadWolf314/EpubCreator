@@ -2,8 +2,8 @@
    "title": "Amonkhet",
    "subtitle": "Magic Story",
    "author": "R and D Narrative Team",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\amonkhetcover.jpg",
-   "pages": 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\amonkhetcover.jpg",
+   "pages":
    [
       {
          "url": "https://magic.wizards.com/en/articles/archive/magic-story/impact-2017-03-29",
@@ -102,11 +102,11 @@
          "parser": "Wizard"
       }
    ],
-   "location": "D:\\Epubs\\Amonkhet\\",
+   "location": "out\\Epubs\\Amonkhet\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

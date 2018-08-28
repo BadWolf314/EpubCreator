@@ -2,8 +2,8 @@
    "title": "Kaladesh",
    "subtitle": "Magic Story",
    "author": "R and D Narrative Team",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\kaladeshstorycover.jpg",
-   "pages": 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\kaladeshstorycover.jpg",
+   "pages":
    [
       {
          "url": "https://magic.wizards.com/en/articles/archive/magic-story/homesick-2016-08-29",
@@ -114,11 +114,11 @@
          "parser": "Wizard"
       }
    ],
-   "location": "D:\\Epubs\\KaladeshStory\\",
+   "location": "out\\Epubs\\KaladeshStory\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

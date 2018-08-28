@@ -2,8 +2,8 @@
    "title": "Level One",
    "subtitle": "The Full Course",
    "author": "Reid Duke",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\levelonecover.jpg",
-   "pages" : 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\levelonecover.jpg",
+   "pages" :
    [
       {
          "url": "http://magic.wizards.com/en/articles/archive/lo/what-magic-2014-08-11",
@@ -282,11 +282,11 @@
          "parser": "Wizard"
       }
    ],
-   "location": "D:\\Epubs\\LevelOne\\",
+   "location": "out\\Epubs\\LevelOne\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

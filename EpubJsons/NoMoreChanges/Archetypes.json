@@ -2,7 +2,7 @@
    "title": "Macro-Archetypes",
    "subtitle": "Channel Fireball",
    "author": "Paulo Vitor Damo da Rosa",
-   "pages" : 
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/home/pvs-playhouse-aggro/",
@@ -35,11 +35,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\MacroArchetypes\\",
+   "location": "out\\Epubs\\MacroArchetypes\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

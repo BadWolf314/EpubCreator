@@ -2,8 +2,8 @@
    "title": "Ixalan",
    "subtitle": "Magic Story",
    "author": "R and D Narrative Team",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\ixalancover.jpg",
-   "pages": 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\ixalancover.jpg",
+   "pages":
    [
       {
          "url": "https://magic.wizards.com/en/articles/archive/magic-story/jace-alone-2017-09-06",
@@ -84,11 +84,11 @@
          "parser": "Wizard"
       }
    ],
-   "location": "D:\\Epubs\\Ixalan\\",
+   "location": "out\\Epubs\\Ixalan\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

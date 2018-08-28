@@ -3,7 +3,7 @@
    "subtitle": "Various",
    "author": "Various",
    "cover": "",
-   "pages" : 
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/articles/10-more-useful-interactions-every-modern-player-should-know/",
@@ -42,11 +42,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\ModernTips\\",
+   "location": "out\\Epubs\\ModernTips\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

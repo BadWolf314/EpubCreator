@@ -2,8 +2,8 @@
    "title": "Level One Modern",
    "subtitle": "Channel Fireball",
    "author": "Riley Knight",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\levelonemoderncover.jpg",
-   "pages" : 
+   "cover": "..\\EpubCreator\\SupportingFiles\\levelonemoderncover.jpg",
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/articles/level-1-modern-grixis-shadow/",
@@ -90,11 +90,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\LevelOneModern\\",
+   "location": "out\\Epubs\\LevelOneModern\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

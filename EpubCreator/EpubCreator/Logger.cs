@@ -20,7 +20,7 @@ namespace EpubCreator
             TextWriterTraceListener traceListener = new TextWriterTraceListener(logPath);
             //TextWriterTraceListener traceListener = new TextWriterTraceListener(Path.Combine(Path.GetTempPath(), AppDomain.CurrentDomain.FriendlyName+".log"));
             Trace.Listeners.Add(traceListener);
-            Trace.Listeners.Add(new ConsoleTraceListener());   //need turn this off when release      
+            Trace.Listeners.Add(new ConsoleTraceListener());   //need turn this off when release
             Trace.AutoFlush = true;
 
         }

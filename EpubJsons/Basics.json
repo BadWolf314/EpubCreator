@@ -2,7 +2,7 @@
    "title": "Basics",
    "subtitle": "Various",
    "author": "Various",
-   "pages" : 
+   "pages" :
    [
       {
          "url": "https://www.channelfireball.com/articles/forced-plays/",
@@ -35,11 +35,11 @@
          "parser": "CFB"
       }
    ],
-   "location": "D:\\Epubs\\Bascis\\",
+   "location": "out\\Epubs\\Bascis\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

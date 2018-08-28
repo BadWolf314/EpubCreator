@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 
@@ -22,7 +22,7 @@ namespace EpubCreator
             catch(Exception ex)
             {
                 Logger.LogError("ERROR: " + ex.Message);
-                creator.Usage();
+                Usage();
                 return;
             }
 
@@ -42,7 +42,7 @@ namespace EpubCreator
 
         Epub epub = new Epub();
         EpubSaver saver;
-        bool mobi = false;
+        bool mobi;
 
         /// <summary>
         /// Constructor: Sets up the logging info
@@ -68,7 +68,7 @@ namespace EpubCreator
                 Logger.LogInfo("args[" + i + "]: " + args[i]);
                 switch (args[i])
                 {
-                    case "--file": 
+                    case "--file":
                     case "-f":
                         i++;
                         GetEpubInfoFromFile(args[i]);
@@ -86,7 +86,7 @@ namespace EpubCreator
         /// <summary>
         /// The usage of the program
         /// </summary>
-        public void Usage()
+        public static void Usage()
         {
             Console.WriteLine("Usage: EpubCreator.exe [-f | --file] <fileName>");
             Console.WriteLine("This program is used to create an .epub");

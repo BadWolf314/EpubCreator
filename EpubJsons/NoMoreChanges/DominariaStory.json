@@ -2,8 +2,8 @@
    "title": "Return to Dominaria",
    "subtitle": "Magic Story",
    "author": "Martha Wells",
-   "cover": "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\dominariastorycover.jpg",
-   "pages": 
+   "cover": "..\\..\\EpubCreator\\SupportingFiles\\dominariastorycover.jpg",
+   "pages":
    [
       {
          "url": "https://magic.wizards.com/en/articles/archive/magic-story/return-dominaria-episode-1-2018-03-21",
@@ -78,11 +78,11 @@
          "parser": "Wizard"
       }
    ],
-   "location": "D:\\Epubs\\ReturnToDominaria\\",
+   "location": "out\\Epubs\\ReturnToDominaria\\",
    "assets" :
    [
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\media.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\style.css",
-      "D:\\BadWolf314\\EpubCreator\\EpubCreator\\SupportingFiles\\break-section-side.png"
+      "..\\..\\EpubCreator\\SupportingFiles\\media.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\style.css",
+      "..\\..\\EpubCreator\\SupportingFiles\\break-section-side.png"
    ]
 }

@@ -1,1 +1,1 @@
-forfiles /m *.json /c "cmd /c D:\BadWolf314\EpubCreator\EpubCreator\EpubCreator\bin\Debug\EpubCreator.exe --file @file --mobi"
+forfiles /m *.json /c "cmd /c ..\EpubCreator\EpubCreator\bin\Debug\EpubCreator.exe --file @file --mobi"

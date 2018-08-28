@@ -59,7 +59,7 @@ namespace EpubCreator
 
         /// <summary>
         /// Populate the Epub Structure
-        /// Create all the Folders 
+        /// Create all the Folders
         /// And Create all the assests
         /// </summary>
         public void PopulateStructure()
@@ -149,7 +149,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// Create the cover if we need to 
+        /// Create the cover if we need to
         /// </summary>
         public void CreateCover()
         {
@@ -259,7 +259,7 @@ namespace EpubCreator
                 EpubStructure.CONTENTLOCATION + EpubStructure.TOCLOCATION));
 
             string bodyText = "";
-            int i = 1; 
+            int i = 1;
             foreach(Page page in epub.pages)
             {
                 string pageTitleNoSpaces = GetPageTitleNoSpaces(page.title);

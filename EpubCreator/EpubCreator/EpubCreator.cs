@@ -68,7 +68,7 @@ namespace EpubCreator
                 Logger.LogInfo("args[" + i + "]: " + args[i]);
                 switch (args[i])
                 {
-                    case "--file": 
+                    case "--file":
                     case "-f":
                         i++;
                         GetEpubInfoFromFile(args[i]);

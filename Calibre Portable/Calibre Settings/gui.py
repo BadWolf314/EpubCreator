@@ -173,6 +173,3 @@ disable_animations = False
 # tag browser hidden categories
 # tag browser categories not to display
 tag_browser_hidden_categories = cPickle.loads('\x80\x02c__builtin__\nset\nq\x01]\x85Rq\x02.')
- 
-
-

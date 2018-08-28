@@ -17,7 +17,7 @@ namespace EpubCreator
         public Epub epub;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="url"></param>
         /// <param name="epub"></param>
@@ -71,7 +71,7 @@ namespace EpubCreator
         #region Node Types
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -81,7 +81,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -91,7 +91,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -101,7 +101,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -111,7 +111,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -121,7 +121,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -140,7 +140,7 @@ namespace EpubCreator
         #region Type Parsers
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -150,7 +150,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -160,7 +160,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -170,7 +170,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -181,7 +181,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -203,7 +203,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -213,7 +213,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -259,7 +259,7 @@ namespace EpubCreator
         #region Image Helpers
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>
@@ -346,7 +346,7 @@ namespace EpubCreator
     } //END OF CLASS
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class SCGParser : EpubParser
     {
@@ -357,7 +357,7 @@ namespace EpubCreator
     } //END OF CLASS
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CFBParser : EpubParser
     {
@@ -369,7 +369,7 @@ namespace EpubCreator
         #region Node Types
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -383,7 +383,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -397,7 +397,7 @@ namespace EpubCreator
         #region Type Parsers
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -412,7 +412,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -432,7 +432,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -446,7 +446,7 @@ namespace EpubCreator
         #endregion
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>
@@ -466,7 +466,7 @@ namespace EpubCreator
     } //END OF CLASS
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class WizardParser : EpubParser
     {
@@ -478,7 +478,7 @@ namespace EpubCreator
         #region Node Types
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -491,7 +491,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -501,7 +501,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -526,7 +526,7 @@ namespace EpubCreator
         #region Type Parsers
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -546,7 +546,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -568,7 +568,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -593,7 +593,7 @@ namespace EpubCreator
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -618,7 +618,7 @@ namespace EpubCreator
         #endregion
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>

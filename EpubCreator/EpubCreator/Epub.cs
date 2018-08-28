@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace EpubCreator
@@ -222,7 +222,7 @@ namespace EpubCreator
         /// <param name="idref">idref to use</param>
         public void AddToSpine(string idref)
         {
-            package.Spine.Itemref.Add(new Itemref()
+            package.Spine.Itemref.Add(new Itemref
             {
                 Idref = SanitizeId(idref)
             });
@@ -236,7 +236,7 @@ namespace EpubCreator
         /// <param name="href">link to use</param>
         public void AddToManifest(string id, string href, string properties = "")
         {
-            Item item = new Item()
+            Item item = new Item
             {
                 Id = SanitizeId(id),
                 Href = href.Replace("\\", "/"),

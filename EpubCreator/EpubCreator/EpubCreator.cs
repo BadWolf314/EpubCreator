@@ -22,7 +22,7 @@ namespace EpubCreator
             catch(Exception ex)
             {
                 Logger.LogError("ERROR: " + ex.Message);
-                creator.Usage();
+                Usage();
                 return;
             }
 
@@ -86,7 +86,7 @@ namespace EpubCreator
         /// <summary>
         /// The usage of the program
         /// </summary>
-        public void Usage()
+        public static void Usage()
         {
             Console.WriteLine("Usage: EpubCreator.exe [-f | --file] <fileName>");
             Console.WriteLine("This program is used to create an .epub");

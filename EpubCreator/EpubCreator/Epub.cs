@@ -202,7 +202,7 @@ namespace EpubCreator
         /// </summary>
         /// <param name="id">id with potentially bad characters</param>
         /// <returns>sanatized id</returns>
-        private string SanitizeId(string id)
+        private static string SanitizeId(string id)
         {
             if (char.IsDigit(id[0]))
             {
